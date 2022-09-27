@@ -1,0 +1,13 @@
+/* SILDER */
+.slider {
+    margin-top: var(--navbar-height);
+    cursor: pointer;
+}
+
+.slider__item {
+    display: flex;
+}
+
+.slider__img {
+    width: 100%;
+}

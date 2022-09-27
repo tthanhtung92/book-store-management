@@ -9,5 +9,28 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
+
+:root {
+  --text-color: #333;
+  --white-color: #fff;
+  --black-color: #000;
+  --button-color: #DE2454;
+  --footer-color: #2B0F42;
+
+  --navbar-height: 118px;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
