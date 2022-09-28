@@ -1,11 +1,43 @@
-import React from 'react'
+import React from "react";
+import Sliders from "../../components/Slider/Slider";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import Book from "../../components/Book/Book";
+import "./FieldDetail.css";
 
 const FieldDetail = () => {
-    return ( 
-        <div className="field">
-            <h1 className="test">abcxyz</h1>
+    return (
+        <div className="main">
+            {/* Navbar */}
+            <Navbar />
+
+            {/* Slider */}
+            <Sliders />
+
+            <div className="bookListContainer">
+                <div className="bookList">
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                    <Book />
+                </div>
+            </div>
+
+            {/* Footer */}
+            <Footer />
         </div>
-     );
-}
- 
+    );
+};
+
 export default FieldDetail;
