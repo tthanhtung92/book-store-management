@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SignIn.css";
 import { FcGoogle } from "react-icons/fc";
-import { BsFacebook } from "react-icons/bs";
+import { UserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
     const [isActive, setPanelActive] = useState("");
@@ -14,6 +15,25 @@ const SignIn = () => {
         setPanelActive("");
     };
 
+    // Login with google
+    const navigate = useNavigate();
+
+    const { googleSignIn, user } = UserAuth();
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await googleSignIn();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        if (user != null) {
+            navigate("/");
+        }
+    }, [user]);
+
     return (
         <div className="formMain">
             <div className={"container " + isActive} id="container">
@@ -21,12 +41,7 @@ const SignIn = () => {
                     <form action="/#">
                         <h1>Create Account</h1>
                         <div className="social-container">
-                            <a href="/#" className="social">
-                                <BsFacebook />
-                            </a>
-                            <a href="/#" className="social">
-                                <FcGoogle />
-                            </a>
+                            <FcGoogle className="social" size="40" onClick={handleGoogleSignIn} />
                         </div>
                         <span>or use your email for registration</span>
                         <input type="text" placeholder="Name" />
@@ -39,12 +54,7 @@ const SignIn = () => {
                     <form action="/#">
                         <h1>Sign in</h1>
                         <div className="social-container">
-                            <a href="/#" className="social">
-                                <BsFacebook />
-                            </a>
-                            <a href="/#" className="social">
-                                <FcGoogle />
-                            </a>
+                            <FcGoogle className="social" size="40" onClick={handleGoogleSignIn} />
                         </div>
                         <span>or use your account</span>
                         <input type="email" placeholder="Email" />

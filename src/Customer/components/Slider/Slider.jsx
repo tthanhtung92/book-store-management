@@ -7,15 +7,16 @@ import "slick-carousel/slick/slick-theme.css";
 import { linkImg } from "./sliderData";
 
 const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
     pauseOnHover: true,
     initialSlide: 0,
+    arrows: false,
     responsive: [
         {
             breakpoint: 1024,

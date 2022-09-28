@@ -1,0 +1,20 @@
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile h1 {
+    font-size: 5rem;
+}
+
+.profile p {
+    font-size: 6rem;
+    color: var(--button-color);
+}
+
+.profile button {
+    width: 90px;
+    height: 30px;
+}
