@@ -44,7 +44,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar__left">
-                <a href="/Book_Store_Management_FE">
+                <a href="/">
                     <img
                         src={require("../../assets/images/logo.gif")}
                         alt=""
