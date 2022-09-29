@@ -44,7 +44,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar__left">
-                <a href="/Book_Store_Management_FE">
+                <a href="/">
                     <img
                         src={require("../../assets/images/logo.gif")}
                         alt=""
@@ -90,7 +90,7 @@ const Navbar = () => {
                         <Tooltip title="Account settings">
                             <IconButton
                                 onClick={handleClick}
-                                size="small"
+                                size="medium"
                                 sx={{ ml: 2 }}
                                 aria-controls={open ? "account-menu" : undefined}
                                 aria-haspopup="true"
@@ -149,7 +149,7 @@ const Navbar = () => {
                             </Link>
                             <Divider />
 
-                            <Link to="/" className="navbar__right-menu-item">
+                            <Link to="/signIn" className="navbar__right-menu-item">
                                 <MenuItem sx={{ marginTop: "8px" }}>
                                     <ListItemIcon>
                                         <PersonAdd fontSize="large" />
