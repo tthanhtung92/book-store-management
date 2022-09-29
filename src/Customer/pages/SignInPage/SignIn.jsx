@@ -39,22 +39,23 @@ const SignIn = () => {
             <div className={"container " + isActive} id="container">
                 <div className="form-container sign-up-container">
                     <form action="/#">
-                        <h1>Create Account</h1>
-                        <div className="social-container">
-                            <FcGoogle className="social" size="40" onClick={handleGoogleSignIn} />
-                        </div>
-                        <span>or use your email for registration</span>
+                        <h1>Sign up</h1>
                         <input type="text" placeholder="Name" />
                         <input type="email" placeholder="Email" />
+                        <input type="tel" placeholder="Phone Number" />
                         <input type="password" placeholder="Password" />
                         <button className="btn-SignUp">Sign Up</button>
+                        <span>or continue with</span>
+                        <div className="social-container">
+                            <FcGoogle onClick={handleGoogleSignIn} />
+                        </div>
                     </form>
                 </div>
                 <div className="form-container sign-in-container">
                     <form action="/#">
                         <h1>Sign in</h1>
                         <div className="social-container">
-                            <FcGoogle className="social" size="40" onClick={handleGoogleSignIn} />
+                            <FcGoogle onClick={handleGoogleSignIn} />
                         </div>
                         <span>or use your account</span>
                         <input type="email" placeholder="Email" />

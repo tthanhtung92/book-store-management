@@ -51,7 +51,9 @@ const Navbar = () => {
                         className="navbar__logo-img"
                     />
                 </a>
-                <h1 className="navbar__logo-name">Bookly.</h1>
+                <a href="/" className="navbar__logo-name">
+                    <h1 className="navbar__logo-name">Bookly</h1>
+                </a>
             </div>
 
             <div className="navbar__middle">
