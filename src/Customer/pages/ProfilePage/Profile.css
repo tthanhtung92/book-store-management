@@ -1,20 +1,34 @@
 .profile {
+}
+
+.profile__wrap {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    margin: 64px 0;
 }
 
-.profile h1 {
+.profile__content {
+    margin-top: var(--navbar-height);
+    max-width: 1024px;
+}
+
+.profile__content h1 {
     font-size: 5rem;
+    font-family: GT Super Bold, serif;
 }
 
-.profile p {
-    font-size: 6rem;
+.profile__content p {
+    font-family: IBM Plex Sans, sans-serif;
+    font-size: 1.9rem;
+}
+
+.profile__content-item {
+    margin-top: 40px;
+}
+
+.profile__content-item h2 {
+    font-family: IBM Plex Sans, sans-serif;
+    font-size: 3rem;
+    font-weight: 530;
     color: var(--button-color);
-}
-
-.profile button {
-    width: 90px;
-    height: 30px;
 }

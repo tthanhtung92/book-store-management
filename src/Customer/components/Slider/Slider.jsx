@@ -51,7 +51,7 @@ export default class Sliders extends Component {
             <div className="slider">
                 <Slider {...settings}>
                     {linkImg.map((item) => (
-                        <div className="slider__item">
+                        <div className="slider__item" key={item}>
                             <img src={item.link} alt="" className="slider__img" />
                         </div>
                     ))}
