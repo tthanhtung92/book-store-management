@@ -1,3 +1,4 @@
+/*--------- Book Cover ------------*/
 .bookList__book {
     padding: 0;
     grid-template-columns: minmax(0, 1fr);
@@ -10,7 +11,7 @@
     display: grid;
 }
 
-.cover-wrapper {
+.bookList__book-wrapper {
     border-radius: 0.25rem;
     align-self: stretch;
     border-width: 1px;
@@ -21,7 +22,7 @@
     width: 100%;
 }
 
-.booklist-book .cover {
+.booklist-book-cover {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +34,7 @@
     bottom: 0;
 }
 
-.product-image {
+.bookList__book-image {
     display: block;
     border-radius: 6px;
     position: relative;
@@ -41,76 +42,64 @@
     transition: transform 200ms ease-in, box-shadow 200ms ease-in;
 }
 
-.product-image:hover {
+.bookList__book-image:hover {
     box-shadow: 0px 11px 18px rgb(0 0 0 / 30%);
     transform: scale(1.025);
 }
 
-.product-image > img {
+.bookList__book-image > img {
     display: block;
     height: auto;
     background-color: #fff4;
     border-radius: 6px;
     object-fit: contain;
-    max-width: none;
-}
-
-.w-full {
     width: 100%;
 }
 
-.leading-tight {
+/*--------- Book Title ------------*/
+.bookList__book-title {
     line-height: 1.25;
     margin-bottom: 0;
-}
-
-.font-serif-bold {
     font-family: GT Super Bold, serif;
 }
 
-.bookList__book a {
+.bookList__book-title a {
     color: inherit;
     text-decoration: inherit;
     background-color: transparent;
 }
 
-.text-s {
+/*--------- Book Author ------------*/
+
+.bookList__book-author {
     font-size: 14px;
     font-weight: inherit;
     margin: 8px 0;
 }
 
-.pb-4 {
+/*--------- Book Price ------------*/
+.bookList__book-price {
     padding-bottom: 1rem;
-}
-
-.text-s {
     font-size: 14px;
-}
-
-.self-start {
     align-self: flex-start;
 }
 
-.lg\:mr-0 {
-    margin-right: 0;
-}
-
-.line-through {
+.bookList__book-price-old {
     text-decoration: line-through;
-}
-
-.text-primary {
+    margin-right: 0;
     font-size: 16px;
 }
 
-.font-sans-bold {
+.bookList__book-price-new {
     font-family: IBM Plex Sans, sans-serif;
     font-size: 20px;
     font-weight: 550;
     color: var(--button-color);
     margin-top: 8px;
 }
+
+
+/*--------- Add to cart button ------------*/
 
 .bookList__add-btn {
     width: 192px;

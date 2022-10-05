@@ -97,7 +97,8 @@
 
 .navbar__middle-search-wrap {
     display: flex;
-    width: 608px;
+    justify-content: space-between;
+    width: 632px;
     height: 40px;
     background-color: #e8e7ea;
     border-radius: 60px;
@@ -105,7 +106,7 @@
 
 .navbar__middle-search {
     display: inline-block;
-    width: 568px;
+    width: 582px;
     height: 40px;
     border: none;
     outline: none;
@@ -157,6 +158,5 @@
 }
 
 .navbar__middle-suggest li:hover {
-    font-size: 1.8rem;
     color: var(--button-color);
 }
