@@ -2,7 +2,6 @@
 .navbar {
     z-index: 1;
     position: fixed;
-    display: flex;
     top: 0;
     height: var(--navbar-height);
     width: 100%;
@@ -12,40 +11,41 @@
 }
 
 .navbar__left {
+    position: absolute;
+    left: 62px;
     display: flex;
     flex-wrap: wrap;
     justify-self: flex-start;
     height: var(--navbar-height);
     width: auto;
     align-items: center;
-    margin-left: 40px;
 }
 
 .navbar__logo-img {
-    width: 134px;
+    width: 92px;
     height: auto;
-    border-radius: 20px;
 }
 
 .navbar__logo-name {
     text-decoration: none;
     height: var(--navbar-height);
-    font-size: 6.2rem;
+    font-size: 4rem;
     color: #27985a;
     line-height: var(--navbar-height);
     padding: 0;
-    margin: 0 10px 0;
+    margin: 0 4px 0;
 }
 
 .navbar__right {
+    position: absolute;
     display: inline-flex;
+    right: 62px;
     flex-wrap: wrap;
     justify-self: flex-end;
     flex-direction: row-reverse;
     align-items: center;
     height: var(--navbar-height);
-    width: 368px;
-    margin-right: 40px;
+    width: auto;
     background-color: #f5f7f6;
 }
 
@@ -87,12 +87,16 @@
 }
 
 .navbar__middle {
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: auto;
+    left: 642px;
+    top: 22px;
 }
 
 .navbar__middle-search-wrap {
@@ -159,4 +163,11 @@
 
 .navbar__middle-suggest li:hover {
     color: var(--button-color);
+}
+
+/* responsive */
+@media only screen and (max-width: 1024px) {
+    .navbar__middle {
+        left: 600px;
+    }
 }
