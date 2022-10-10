@@ -29,6 +29,8 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Button */
+
 .btn-primary {
     width: 192px;
     height: 38px;
@@ -48,4 +50,33 @@ html {
     background-color: #bf1f49;
     box-shadow: 1px 7px 13px 0px rgb(67 0 17 / 13%);
     transform: scale(1.02);
+}
+
+/* Paginate */
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    border-top: 5rem;
+    font-size: 2.6rem;
+    gap: 5px;
+    margin-bottom: 60px;
+}
+
+.pagination .page-num {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.pagination .page-num:hover {
+    background-color: var(--button-color);
+    color: var(--white-color);
+}
+
+.pagination .active {
+    background-color: var(--button-color);
 }

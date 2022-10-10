@@ -1,65 +1,82 @@
-import { Component } from "react";
-import "./Field.css";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ReactPaginate from "react-paginate";
+import "./Field.css";
 
-export default class Field extends Component {
-    render() {
-        return (
-            <div className="content">
-                <div className="content__header">
-                    <div className="content__header-left">
-                        <img
-                            src={require("../../assets/images/Social_media_Icon_alternative.webp")}
-                            alt=""
-                            className="content__header-logo"
-                        />
-                        <h1 className="content__header-name">Bookly Best Seller Of The Week</h1>
-                    </div>
-                    <Link to="/field">
-                        <button className="content__header-viewAll-btn">VIEW LIST</button>
-                    </Link>
-                </div>
+function Field(props) {
+    const { data } = props;
 
-                <div className="content__body">
-                    <div className="row">
-                        <div className="column">
+    const [currentItems, setCurrentItems] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [itemOffset, setItemOffset] = useState(0);
+    const itemsPerPage = 5;
+
+    useEffect(() => {
+        const endOffset = itemOffset + itemsPerPage;
+        setCurrentItems(data.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(data.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage, data]);
+
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % data.length;
+        setItemOffset(newOffset);
+    };
+
+    return (
+        <>
+            {currentItems.map((item, index) => (
+                <div className="content" key={index}>
+                    <div className="content__header">
+                        <div className="content__header-left">
                             <img
-                                src={require("../../assets/images/book6.jpg")}
+                                src={require("../../assets/images/Social_media_Icon_alternative.webp")}
                                 alt=""
-                                className="book"
+                                className="content__header-logo"
                             />
+                            <h1 className="content__header-name">{item?.fieldName}</h1>
                         </div>
-                        <div className="column">
-                            <img
-                                src={require("../../assets/images/book7.jpg")}
-                                alt=""
-                                className="book"
-                            />
-                        </div>
-                        <div className="column">
-                            <img
-                                src={require("../../assets/images/book8.jpg")}
-                                alt=""
-                                className="book"
-                            />
-                        </div>
-                        <div className="column">
-                            <img
-                                src={require("../../assets/images/book9.jpg")}
-                                alt=""
-                                className="book"
-                            />
-                        </div>
-                        <div className="column">
-                            <img
-                                src={require("../../assets/images/book10.jpg")}
-                                alt=""
-                                className="book"
-                            />
+                        <Link to="/field">
+                            <button className="content__header-viewAll-btn">VIEW LIST</button>
+                        </Link>
+                    </div>
+
+                    <div className="content__body">
+                        <div className="row">
+                            <div className="column">
+                                <img src={item?.books[0]?.image} alt="" className="book" />
+                            </div>
+                            <div className="column">
+                                <img src={item?.books[1]?.image} alt="" className="book" />
+                            </div>
+                            <div className="column">
+                                <img src={item?.books[2]?.image} alt="" className="book" />
+                            </div>
+                            <div className="column">
+                                <img src={item?.books[3]?.image} alt="" className="book" />
+                            </div>
+                            <div className="column">
+                                <img src={item?.books[4]?.image} alt="" className="book" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        );
-    }
+            ))}
+            <ReactPaginate
+                breakLabel="..."
+                nextLabel=">"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={5}
+                pageCount={pageCount}
+                previousLabel="<"
+                renderOnZeroPageCount={null}
+                containerClassName="pagination"
+                pageLinkClassName="page-num"
+                previousLinkClassName="page-num"
+                nextLinkClassName="page-num"
+                activeLinkClassName="active"
+            />
+        </>
+    );
 }
+
+export default Field;
