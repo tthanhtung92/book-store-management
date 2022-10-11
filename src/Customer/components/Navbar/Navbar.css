@@ -1,5 +1,6 @@
 /* NAVBAR */
 .navbar {
+    display: flex;
     z-index: 1;
     position: fixed;
     top: 0;
@@ -10,14 +11,14 @@
     border-bottom: 1px solid #efeef1;
 }
 
+/* ---------------- Left -------------------- */
 .navbar__left {
-    position: absolute;
-    left: 62px;
     display: flex;
     flex-wrap: wrap;
     justify-self: flex-start;
     height: var(--navbar-height);
     width: auto;
+    padding-left: 30px;
     align-items: center;
 }
 
@@ -36,16 +37,17 @@
     margin: 0 4px 0;
 }
 
+/* ---------------- Right -------------------- */
+
 .navbar__right {
-    position: absolute;
     display: inline-flex;
-    right: 62px;
-    flex-wrap: wrap;
     justify-self: flex-end;
     flex-direction: row-reverse;
     align-items: center;
     height: var(--navbar-height);
     width: auto;
+    padding-right: 30px;
+    padding-left: 121px;
     background-color: #f5f7f6;
 }
 
@@ -86,17 +88,15 @@
     font-size: 1.6rem;
 }
 
+/* ---------------- Middle -------------------- */
+
 .navbar__middle {
-    position: absolute;
     display: flex;
-    flex-wrap: wrap;
-    flex: 1;
     flex-direction: column;
+    justify-self: center;
     justify-content: center;
     align-items: center;
     width: auto;
-    left: 642px;
-    top: 22px;
 }
 
 .navbar__middle-search-wrap {
@@ -144,25 +144,27 @@
     font-size: 2.2rem;
 }
 
-.navbar__middle-suggest-list {
-    padding: 0;
-    display: inline-flex;
-    list-style: none;
+.navbar__middle-suggest {
+    display: flex;
+    justify-content: center;
 }
 
 .navbar__middle-suggest-item {
+    padding: 0 12px;
     text-decoration: none;
-    font-size: 1.6rem;
+    margin-top: 8px;
+    font-size: 1.8rem;
+    line-height: 4rem;
+    font-weight: 400;
     color: var(--text-color);
 }
 
-.navbar__middle-suggest li {
-    padding-left: 0;
-    margin: 16px 16px 0;
+.navbar__middle-suggest-item:hover {
+    color: var(--button-color);
 }
 
-.navbar__middle-suggest li:hover {
-    color: var(--button-color);
+.navbar__middle-suggest-item p {
+    margin: 0;
 }
 
 /* responsive */

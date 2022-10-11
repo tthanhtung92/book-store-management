@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import Book from "../../components/Book/Book";
 import "./FieldDetail.css";
 
-const FieldDetail = () => {
+const FieldDetail = () => {    
     return (
         <div className="main">
             {/* Navbar */}
@@ -16,20 +16,6 @@ const FieldDetail = () => {
 
             <div className="bookListContainer">
                 <div className="bookList">
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
-                    <Book />
                     <Book />
                 </div>
             </div>

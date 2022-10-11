@@ -1,9 +1,9 @@
 import axiosClient from "./axiosClient";
 
 const fieldApi = {
-    async getAll(params) {
+    async getAllField(params) {
         var qs = require("qs");
-        const response = await axiosClient.get("fields/", {
+        const res = await axiosClient.get("Field/GetAll", {
             params: {
                 ...params,
             },
@@ -12,10 +12,18 @@ const fieldApi = {
                 return qs.stringify(params, { arrayFormat: "repeat" });
             },
         });
-        return response;
+        return res;
     },
 
-    
+    async get5Row() {
+        const url = `Field/Get5Row`;
+        return axiosClient.get(url);
+    },
+
+    async getById(id) {
+        const url = `Field/GetById/${id}`;
+        return axiosClient.get(url);
+    },
 };
 
 export default fieldApi;

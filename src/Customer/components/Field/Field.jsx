@@ -6,6 +6,7 @@ import "./Field.css";
 function Field(props) {
     const { data } = props;
 
+    // Pagination
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -21,6 +22,7 @@ function Field(props) {
         const newOffset = (event.selected * itemsPerPage) % data.length;
         setItemOffset(newOffset);
     };
+    // End Pagination
 
     return (
         <>
@@ -35,7 +37,7 @@ function Field(props) {
                             />
                             <h1 className="content__header-name">{item?.fieldName}</h1>
                         </div>
-                        <Link to="/field">
+                        <Link to={`/field/${item.fieldID}`}>
                             <button className="content__header-viewAll-btn">VIEW LIST</button>
                         </Link>
                     </div>

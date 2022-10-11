@@ -3,7 +3,8 @@ import { BiSearchAlt } from "react-icons/bi";
 import { UserAuth } from "../../context/AuthContext";
 import { FiShoppingCart } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import fieldApi from "../../api/fieldApi";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -17,7 +18,9 @@ import Logout from "@mui/icons-material/Logout";
 
 import "./Navbar.css";
 
-const Navbar = () => {
+function Navbar(props) {
+    //props
+
     // handle logout
     const navigate = useNavigate();
     const { logOut, user } = UserAuth();
@@ -40,6 +43,20 @@ const Navbar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    //Lấy suggest từ api
+    const [suggests, setSuggests] = useState([]);
+    useEffect(() => {
+        const Data = async () => {
+            try {
+                const res = await fieldApi.get5Row();
+                setSuggests(res.data);
+            } catch (error) {
+                console.log("Không lấy được dữ liệu từ API");
+            }
+        };
+        Data();
+    }, []);
 
     return (
         <div className="navbar">
@@ -69,20 +86,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar__middle-suggest">
-                    <ul className="navbar__middle-suggest-list">
-                        <a href="/#" className="navbar__middle-suggest-item">
-                            <li>New Books</li>
+                    {suggests.map((item, index) => (
+                        <a href="/#" className="navbar__middle-suggest-item" key={index}>
+                            <p>{item.fieldName}</p>
                         </a>
-                        <a href="/#" className="navbar__middle-suggest-item">
-                            <li>Best sellers</li>
-                        </a>
-                        <a href="/#" className="navbar__middle-suggest-item">
-                            <li>Confiction</li>
-                        </a>
-                        <a href="/#" className="navbar__middle-suggest-item">
-                            <li>Gift card</li>
-                        </a>
-                    </ul>
+                    ))}
                 </div>
             </div>
 
@@ -193,6 +201,6 @@ const Navbar = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Navbar;

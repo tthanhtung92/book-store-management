@@ -14,7 +14,7 @@ export default function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/field" element={<FieldDetail />} />
+                    <Route path="/field/:fieldId" element={<FieldDetail />} />
                     <Route path="/signIn" element={<SignIn />} />
                     <Route path="/bookDetail" element={<BookDetail />} />
                     <Route

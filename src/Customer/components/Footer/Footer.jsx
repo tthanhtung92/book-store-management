@@ -20,19 +20,13 @@ export default class Footer extends Component {
                             <h1 className="footer__wrap-middle-item">About</h1>
                         </a>
                         <a href="/#">
-                            <h1 className="footer__wrap-middle-item">Support/Help</h1>
+                            <h1 className="footer__wrap-middle-item">Support</h1>
                         </a>
                         <a href="/#">
                             <h1 className="footer__wrap-middle-item">Gift card</h1>
                         </a>
                         <a href="/#">
                             <h1 className="footer__wrap-middle-item">Contact</h1>
-                        </a>
-                        <a href="/#">
-                            <h1 className="footer__wrap-middle-item">Bookshop for Authors</h1>
-                        </a>
-                        <a href="/#">
-                            <h1 className="footer__wrap-middle-item">Bookshop for Bookstores</h1>
                         </a>
                     </div>
                     <div className="footer__wrap-right">
@@ -43,11 +37,6 @@ export default class Footer extends Component {
                             <BsYoutube className="footer__wrap-right-item" />
                         </a>
                     </div>
-                </div>
-                <div className="footer__copyright">
-                    <h1 className="footer__copyright-item">Term of use</h1>
-                    <h1 className="footer__copyright-item">@2022 SWP391</h1>
-                    <h1 className="footer__copyright-item">Privacy Notice</h1>
                 </div>
             </footer>
         );
