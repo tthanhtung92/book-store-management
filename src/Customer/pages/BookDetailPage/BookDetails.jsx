@@ -1,25 +1,21 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import Book from "../../components/Book/Book";
-import "./FieldDetail.css";
+import BookDetail from "../../components/BookDetail/BookDetail";
 
-const FieldDetail = () => {
+import "./BookDetails.css";
+
+function BookDetails() {
     return (
         <div className="main">
             {/* Navbar */}
             <Navbar />
 
-            <div className="bookListContainer">
-                <div className="bookList">
-                    <Book />
-                </div>
-            </div>
-
+            <BookDetail />
             {/* Footer */}
             <Footer />
         </div>
     );
-};
+}
 
-export default FieldDetail;
+export default BookDetails;

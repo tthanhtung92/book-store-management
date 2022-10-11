@@ -1,5 +1,6 @@
 .bookDetail {
-    margin: 64px 0;
+    margin-top: calc(var(--navbar-height) + 84px);
+    margin-bottom: 84px;
     display: flex;
     justify-content: center;
 }
@@ -37,7 +38,7 @@
 
 .bookDetail__bookImg-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     max-width: none;
 }
 

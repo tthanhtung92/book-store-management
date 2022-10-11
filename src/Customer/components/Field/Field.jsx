@@ -37,7 +37,7 @@ function Field(props) {
                             />
                             <h1 className="content__header-name">{item?.fieldName}</h1>
                         </div>
-                        <Link to={`/field/${item.fieldID}`}>
+                        <Link to={`/field/${item?.fieldID}`}>
                             <button className="content__header-viewAll-btn">VIEW LIST</button>
                         </Link>
                     </div>
@@ -45,19 +45,29 @@ function Field(props) {
                     <div className="content__body">
                         <div className="row">
                             <div className="column">
-                                <img src={item?.books[0]?.image} alt="" className="book" />
+                                <Link to={`/bookDetail/${item?.books[0]?.bookID}`}>
+                                    <img src={item?.books[0]?.image} alt="" className="book" />
+                                </Link>
                             </div>
                             <div className="column">
-                                <img src={item?.books[1]?.image} alt="" className="book" />
+                                <Link to={`/bookDetail/${item?.books[1]?.bookID}`}>
+                                    <img src={item?.books[1]?.image} alt="" className="book" />
+                                </Link>
                             </div>
                             <div className="column">
-                                <img src={item?.books[2]?.image} alt="" className="book" />
+                                <Link to={`/bookDetail/${item?.books[2]?.bookID}`}>
+                                    <img src={item?.books[2]?.image} alt="" className="book" />
+                                </Link>
                             </div>
                             <div className="column">
-                                <img src={item?.books[3]?.image} alt="" className="book" />
+                                <Link to={`/bookDetail/${item?.books[3]?.bookID}`}>
+                                    <img src={item?.books[3]?.image} alt="" className="book" />
+                                </Link>
                             </div>
                             <div className="column">
-                                <img src={item?.books[4]?.image} alt="" className="book" />
+                                <Link to={`/bookDetail/${item?.books[4]?.bookID}`}>
+                                    <img src={item?.books[4]?.image} alt="" className="book" />
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -16,7 +16,7 @@ function Home() {
             try {
                 //const res = await axios.get("https://localhost:7091/Field/GetAll");
                 const res = await fieldApi.getAllField();
-                setFields(res.data);    
+                setFields(res.data);
                 // console.log(res.data);
             } catch (err) {
                 console.log("Không lấy được dữ liệu từ API");

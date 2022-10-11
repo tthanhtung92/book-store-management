@@ -1,14 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PuffLoader from "react-spinners/PuffLoader";
 import fieldApi from "../../api/fieldApi";
 import "./Book.css";
 
-function Book() {
+function Book(props) {
+    //----------------------------
     const { fieldId } = useParams();
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
-
 
     //Get book by Id
     useEffect(() => {
@@ -16,7 +17,7 @@ function Book() {
             try {
                 const res = await fieldApi.getById(fieldId);
                 setBooks(res.data[0].books);
-                console.log(res.data[0].books);
+                // console.log(res.data[0].books[0].bookID);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");
             }
@@ -24,6 +25,7 @@ function Book() {
         };
         getBooks();
     }, [fieldId]);
+    //-----------------------------
 
     return (
         <>
@@ -42,9 +44,9 @@ function Book() {
                         <div className="bookList__book" key={index}>
                             {/* Book cover */}
                             <div className="bookList__book-wrapper">
-                                <a
+                                <Link
+                                    to={`/bookDetail/${item?.bookID}`}
                                     className="bookList__book-cover"
-                                    href="/p/books/stay-curious-and-keep-exploring-50-amazing-bubbly-and-creative-science-experiments-to-do-with-the-whole-family-emily-calandrelli/18273279?ean=9781797216225&amp;listref=bookshop-org-best-sellers-of-the-week"
                                 >
                                     <div className="bookList__book-image">
                                         <img
@@ -52,7 +54,7 @@ function Book() {
                                             src={item?.image}
                                         />
                                     </div>
-                                </a>
+                                </Link>
                             </div>
 
                             <div className="bookList__book-titleAndAuthor">

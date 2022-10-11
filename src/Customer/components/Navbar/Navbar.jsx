@@ -87,9 +87,13 @@ function Navbar(props) {
 
                 <div className="navbar__middle-suggest">
                     {suggests.map((item, index) => (
-                        <a href="/#" className="navbar__middle-suggest-item" key={index}>
+                        <Link
+                            to={`/field/${item?.fieldID}`}
+                            className="navbar__middle-suggest-item"
+                            key={index}
+                        >
                             <p>{item.fieldName}</p>
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>
