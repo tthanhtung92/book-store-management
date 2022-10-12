@@ -6,10 +6,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Field from "../../components/Field/Field";
 import "./Home.css";
+import { Navigate } from "react-router-dom";
 
 function Home() {
     const [fields, setFields] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const Data = async () => {
@@ -19,6 +21,7 @@ function Home() {
                 setFields(res.data);
                 // console.log(res.data);
             } catch (err) {
+                setError(err);
                 console.log("Không lấy được dữ liệu từ API");
             }
             setLoading(false);
@@ -29,7 +32,7 @@ function Home() {
 
     return (
         <>
-            {loading ? (
+            {loading && (
                 <PuffLoader
                     color={"#de2454"}
                     loading={loading}
@@ -38,7 +41,11 @@ function Home() {
                     aria-label="Loading Spinner"
                     data-testid="loader"
                 />
-            ) : (
+            )}
+
+            {error && <Navigate to="/404" />}
+
+            {!loading && !error && (
                 <div id="main">
                     {/* Navbar */}
                     <Navbar />
