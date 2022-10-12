@@ -75,7 +75,7 @@ function Book(props) {
                                 <div className="bookList__book-price-new">{item?.price} VNĐ</div>
                             </div>
 
-                            <button className="btn-primary">ADD TO CART</button>
+                            <button className="btn-primary">THÊM VÀO GIỎ</button>
                         </div>
                     ))}
                 </>

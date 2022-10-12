@@ -19,6 +19,11 @@ const bookApi = {
         const url = `Book/GetById/${id}`;
         return axiosClient.get(url);
     },
+
+    async getByName(name) {
+        const url = `Book/GetByName/${name}`;
+        return axiosClient.get(url);
+    },
 };
 
 export default bookApi;

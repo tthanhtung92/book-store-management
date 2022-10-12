@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./BookDetail.css";
 import PuffLoader from "react-spinners/PuffLoader";
 import bookApi from "../../api/bookApi";
@@ -43,13 +44,16 @@ function BookDetail() {
                                 {/* book Cover */}
                                 <div className="bookDetail__bookImg">
                                     <div className="bookDetail__bookImg-cover">
-                                        <a href="/#" className="bookDetail__bookImg-link">
+                                        <Link
+                                            to={`/bookDetail/${item?.bookID}`}
+                                            className="bookDetail__bookImg-link"
+                                        >
                                             <img
                                                 className="bookDetail__bookImg-img"
                                                 src={item?.image}
                                                 alt="book"
                                             />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -76,7 +80,7 @@ function BookDetail() {
                                     </div>
 
                                     {/* action button */}
-                                    <button className="btn-primary mt-20">ADD TO CART</button>
+                                    <button className="btn-primary mt-20">THÊM VÀO GIỎ</button>
 
                                     {/* description */}
                                     <div className="bookDetail__detail-description">

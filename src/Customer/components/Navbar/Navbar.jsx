@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BiSearchAlt } from "react-icons/bi";
 import { UserAuth } from "../../context/AuthContext";
 import { FiShoppingCart } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -12,11 +11,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
 import "./Navbar.css";
+import { SearchBar } from "../SearchBar/SearchBar";
 
 function Navbar(props) {
     //props
@@ -73,18 +71,8 @@ function Navbar(props) {
                 </a>
             </div>
 
+            <SearchBar />
             <div className="navbar__middle">
-                <div className="navbar__middle-search-wrap">
-                    <input
-                        type="text"
-                        className="navbar__middle-search"
-                        placeholder="Search books, authors, news,..."
-                    />
-                    <button href="/#" className="navbar__middle-search-btn">
-                        <BiSearchAlt className="navbar__middle-search-btn-icon" />
-                    </button>
-                </div>
-
                 <div className="navbar__middle-suggest">
                     {suggests.map((item, index) => (
                         <Link
@@ -163,28 +151,10 @@ function Navbar(props) {
                             </Link>
                             <Divider />
 
-                            <Link to="/" className="navbar__right-menu-item">
-                                <MenuItem sx={{ marginTop: "8px" }}>
-                                    <ListItemIcon>
-                                        <PersonAdd fontSize="large" />
-                                    </ListItemIcon>
-                                    Add another account
-                                </MenuItem>
-                            </Link>
-
-                            <Link to="/" className="navbar__right-menu-item">
-                                <MenuItem>
-                                    <ListItemIcon>
-                                        <Settings fontSize="large" />
-                                    </ListItemIcon>
-                                    Settings
-                                </MenuItem>
-                            </Link>
-
                             <MenuItem
                                 onClick={handleSignOut}
                                 className="navbar__right-menu-item"
-                                sx={{ fontSize: "1.6rem" }}
+                                sx={{ fontSize: "1.6rem", marginTop: "8px" }}
                             >
                                 <ListItemIcon>
                                     <Logout fontSize="large" />

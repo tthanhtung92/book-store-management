@@ -38,7 +38,7 @@ function Field(props) {
                             <h1 className="content__header-name">{item?.fieldName}</h1>
                         </div>
                         <Link to={`/field/${item?.fieldID}`}>
-                            <button className="content__header-viewAll-btn">VIEW LIST</button>
+                            <button className="content__header-viewAll-btn">XEM TẤT CẢ</button>
                         </Link>
                     </div>
 
