@@ -17,7 +17,7 @@ export default function App() {
                 <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/404" element={<Error />} />
+                    <Route path="/500" element={<Error />} />
                     <Route path="/signIn" element={<SignIn />} />
                     <Route path="/field/:fieldId" element={<FieldDetail />} />
                     <Route path="/bookDetail/:bookId" element={<BookDetail />} />

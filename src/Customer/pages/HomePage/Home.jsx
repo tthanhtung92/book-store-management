@@ -43,7 +43,7 @@ function Home() {
                 />
             )}
 
-            {error && <Navigate to="/404" />}
+            {error && <Navigate to="/500" />}
 
             {!loading && !error && (
                 <div id="main">

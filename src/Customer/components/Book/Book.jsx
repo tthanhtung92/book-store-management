@@ -17,7 +17,7 @@ function Book(props) {
             try {
                 const res = await fieldApi.getById(fieldId);
                 setBooks(res.data[0].books);
-                // console.log(res.data[0].books[0].bookID);
+                // console.log(res.data[0].books[0]);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");
             }
