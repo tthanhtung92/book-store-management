@@ -80,8 +80,9 @@
 /*--------- Book Author ------------*/
 
 .bookList__book-author {
+    color: #962196;
     font-size: 14px;
-    font-weight: inherit;
+    font-weight: 500;
     margin: 8px 0;
 }
 

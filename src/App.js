@@ -8,7 +8,7 @@ import SignIn from "./Customer/pages/SignInPage/SignIn";
 import Profile from "./Customer/pages/ProfilePage/Profile";
 import Protected from "./Customer/components/Protected/Protected";
 import ScrollToTop from "./Customer/components/ScrollToTop/ScrollToTop";
-import Error from "./Customer/pages/404/Error";
+import Error from "./Customer/pages/500/Error";
 
 export default function App() {
     return (
