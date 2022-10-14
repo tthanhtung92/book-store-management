@@ -34,7 +34,7 @@ html {
 .btn-primary {
     width: 192px;
     height: 38px;
-    border-radius: 1000px;
+    border-radius: 14px;
     background-color: var(--button-color);
     border: none;
     font-family: IBM Plex Sans, sans-serif;
