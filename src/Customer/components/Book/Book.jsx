@@ -16,8 +16,8 @@ function Book(props) {
         const getBooks = async () => {
             try {
                 const res = await fieldApi.getById(fieldId);
-                setBooks(res.data);
-                console.log(res.data);
+                setBooks(res.data[0].books);
+                // console.log(res.data[0].books);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");
             }
@@ -66,7 +66,7 @@ function Book(props) {
                                 </h2>
 
                                 {/* Book Author */}
-                                <h3 className="bookList__book-author">{item?.authorName}</h3>
+                                <h3 className="bookList__book-author">{item?.author.authorName}</h3>
                             </div>
 
                             {/* Book Price */}

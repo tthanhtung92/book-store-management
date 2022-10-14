@@ -63,7 +63,7 @@ function BookDetail() {
                                     <div className="bookDetail__detail-title">
                                         <h1>{item?.bookName}</h1>
                                         <span>
-                                            <a href="/#">Vanessa Marin</a> (Author)
+                                            <a href="/#">{item?.author?.authorName}</a> (Tác giả)
                                         </span>
                                     </div>
 
@@ -84,15 +84,15 @@ function BookDetail() {
 
                                     {/* description */}
                                     <div className="bookDetail__detail-description">
-                                        <h1>Description</h1>
+                                        <h1>Mô tả</h1>
                                         <p>{item?.description}</p>
                                     </div>
 
                                     {/* Detail */}
                                     <div className="bookDetail__detail-detail mt-20">
-                                        <h1>Product Details</h1>
+                                        <h1>Chi tiết sản phẩm</h1>
                                         <span>
-                                            Price:{" "}
+                                            Giá:{" "}
                                             <p className="bookDetail__detail-detail-price">
                                                 {item?.price} VNĐ
                                             </p>
@@ -100,16 +100,16 @@ function BookDetail() {
                                         <br />
 
                                         <span>
-                                            Publisher: <p>{item?.publisher}</p>
+                                            Nhà xuất bản: <p>{item?.publisher.publisherName}</p>
                                         </span>
                                         <br />
 
                                         <span>
-                                            Publish Date: <p>{item?.dateOfPublished}</p>
+                                            Ngày xuất bản: <p>{item?.dateOfPublished}</p>
                                         </span>
                                         <br />
                                         <span>
-                                            Language: <p>Tiếng việt</p>
+                                            Ngôn ngữ: <p>Tiếng việt</p>
                                         </span>
                                         <br />
                                     </div>
