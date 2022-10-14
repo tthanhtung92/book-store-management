@@ -23,9 +23,9 @@ const Cart = () => {
                         <table className="cart-table">
                             <thead>
                                 <tr>
-                                    <th>Item</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Giá tiền</th>
+                                    <th>Số lượng</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -106,7 +106,7 @@ const Cart = () => {
                 )}
                 {!isEmpty && (
                     <div className="cart-footer">
-                        <h1 className="cart-footer__total">Total Price: {cartTotal} VND</h1>
+                        <h1 className="cart-footer__total">Tổng giá tiền: {cartTotal} VND</h1>
                         <button className="pay-btn">Thanh toán</button>
                         <button className="clear-btn" onClick={() => emptyCart()}>
                             Clear giỏ hàng
