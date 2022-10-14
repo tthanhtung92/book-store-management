@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import { FiShoppingCart } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "react-use-cart";
 import React, { useEffect, useState } from "react";
 import fieldApi from "../../api/fieldApi";
 import Avatar from "@mui/material/Avatar";
@@ -12,13 +13,25 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Logout from "@mui/icons-material/Logout";
-
-import "./Navbar.css";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
 import { SearchBar } from "../SearchBar/SearchBar";
+import "./Navbar.css";
+
+// Styled Badge
+const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+        fontSize: "12px",
+        right: 4,
+        top: 13,
+        border: `2px solid ${theme.palette.background.paper}`,
+        padding: "6px",
+    },
+}));
 
 function Navbar(props) {
     //props
-
+    const { isEmpty, totalItems } = useCart();
     // handle logout
     const navigate = useNavigate();
     const { logOut, user } = UserAuth();
@@ -168,10 +181,13 @@ function Navbar(props) {
                         Sign in
                     </Link>
                 )}
-                <a href="/#" className="navbar__right-cart">
-                    <FiShoppingCart className="navbar__right-cart-logo" />
-                    <i className="fa-solid fa-"></i>
-                </a>
+                {!isEmpty && (
+                    <StyledBadge badgeContent={totalItems} color="error">
+                        <Link to="/cart" className="navbar__right-cart">
+                            <FiShoppingCart className="navbar__right-cart-logo" />
+                        </Link>
+                    </StyledBadge>
+                )}
             </div>
         </div>
     );
