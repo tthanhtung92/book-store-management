@@ -10,13 +10,29 @@ function BookDetail() {
     const { bookId } = useParams();
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [newPrices, setNewPrices] = useState("");
 
     useEffect(() => {
         const getBooks = async () => {
             try {
                 const res = await bookApi.getById(bookId);
+
+                const price = JSON.stringify(res.data[0].price);
+                const sub = ".";
+
+                if (price.length === 6) {
+                    const newPrice6 = price.slice(0, 3) + sub + price.slice(3);
+                    setNewPrices(newPrice6);
+                } else if (price.length === 5) {
+                    const newPrice5 = price.slice(0, 2) + sub + price.slice(2);
+                    setNewPrices(newPrice5);
+                } else {
+                    const newPrice7 =
+                        price.slice(0, 1) + sub + price.slice(1, 4) + sub + price.slice(4, 7);
+                    setNewPrices(newPrice7);
+                }
+
                 setBooks(res.data);
-                // console.log(res.data);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");
             }
@@ -69,9 +85,7 @@ function BookDetail() {
 
                                     {/* price */}
                                     {/* <h1 className="bookDetail__detail-oldPrice">$27.95</h1> */}
-                                    <h1 className="bookDetail__detail-newPrice">
-                                        {item?.price} VNĐ
-                                    </h1>
+                                    <h1 className="bookDetail__detail-newPrice">{newPrices} VNĐ</h1>
 
                                     {/* status */}
                                     <div className="bookDetail__detail-status">
@@ -85,7 +99,9 @@ function BookDetail() {
                                     {/* description */}
                                     <div className="bookDetail__detail-description">
                                         <h1>Mô tả</h1>
-                                        <p>{item?.description}</p>
+                                        <p style={{ whiteSpace: "break-spaces" }}>
+                                            {item?.description}
+                                        </p>
                                     </div>
 
                                     {/* Detail */}
@@ -94,7 +110,7 @@ function BookDetail() {
                                         <span>
                                             Giá:{" "}
                                             <p className="bookDetail__detail-detail-price">
-                                                {item?.price} VNĐ
+                                                {newPrices} VNĐ
                                             </p>
                                         </span>
                                         <br />
@@ -105,7 +121,8 @@ function BookDetail() {
                                         <br />
 
                                         <span>
-                                            Ngày xuất bản: <p>{item?.dateOfPublished}</p>
+                                            Ngày xuất bản:{" "}
+                                            <p>{item?.dateOfPublished.slice(0, 10)}</p>
                                         </span>
                                         <br />
                                         <span>

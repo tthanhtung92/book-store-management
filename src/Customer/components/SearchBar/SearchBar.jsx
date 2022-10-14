@@ -210,10 +210,10 @@ export function SearchBar(props) {
         });
 
         if (response) {
-            console.log("Response: ", response.data);
             if (response.data && response.data.length === 0) setNoBookShows(true);
 
             setBookShows(response.data);
+            // console.log("Response: ", response.data);
         }
 
         setLoading(false);
@@ -275,17 +275,19 @@ export function SearchBar(props) {
                     {!isLoading && !isEmpty && (
                         <>
                             {bookShows.map((item, index) => (
-                                <>
-                                    <Link to={`/bookDetail/${item?.bookID}`} className="linkToBook">
-                                        <BookShowContainer key={index}>
-                                            <Thumbnail>
-                                                <img src={item?.image} alt="" />
-                                            </Thumbnail>
-                                            <Name>{item?.bookName}</Name>
-                                            <Price>{item?.price || "N/A"} VNĐ</Price>
-                                        </BookShowContainer>
-                                    </Link>
-                                </>
+                                <Link
+                                    to={`/bookDetail/${item?.bookID}`}
+                                    className="linkToBook"
+                                    key={index}
+                                >
+                                    <BookShowContainer>
+                                        <Thumbnail>
+                                            <img src={item?.image} alt="" />
+                                        </Thumbnail>
+                                        <Name>{item?.bookName}</Name>
+                                        <Price>{item?.price || "N/A"} VNĐ</Price>
+                                    </BookShowContainer>
+                                </Link>
                             ))}
                         </>
                     )}
