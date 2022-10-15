@@ -29,6 +29,10 @@
     text-align: left;
 }
 
+.thead-price {
+    min-width: 160px;
+}
+
 .cart-table th,
 .cart-table td {
     padding: 12px 15px;
@@ -79,7 +83,7 @@
 }
 
 .cart-table__book-price {
-    text-align: center;
+    text-align: left;
     font-weight: 500;
 }
 

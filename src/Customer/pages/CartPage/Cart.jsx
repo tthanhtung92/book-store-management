@@ -24,7 +24,7 @@ const Cart = () => {
                             <thead>
                                 <tr>
                                     <th>Sản phẩm</th>
-                                    <th>Giá tiền</th>
+                                    <th className="thead-price">Giá tiền</th>
                                     <th>Số lượng</th>
                                     <th></th>
                                 </tr>
