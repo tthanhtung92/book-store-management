@@ -19,16 +19,16 @@ function Book(props) {
     };
 
     const addSuccess = () =>
-        toast.success("🦄 Sao hay ra dẻ quá =)))", {
+        toast.success("📚 Thêm vào giỏ thành công!", {
             position: "top-right",
             autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: false,
             draggable: false,
-            progress: undefined,
-            theme: "dark",
-            style: { fontSize: "16px" },
+            progress: 0,
+            theme: "light",
+            style: { fontSize: "18px" },
         });
 
     return (
@@ -83,7 +83,7 @@ function Book(props) {
                     pauseOnFocusLoss
                     draggable={false}
                     pauseOnHover={false}
-                    theme="dark"
+                    theme="light"
                 />
             </div>
         </>

@@ -15,7 +15,7 @@ const Cart = () => {
         <>
             <Navbar />
             <div className="cart-container">
-                <h1 className="cart-title">{isEmpty ? "Còn cái nịt =)))" : "Bookly Cart"}</h1>
+                <h1 className="cart-title">{isEmpty ? "Còn cái nịt =)))" : "Dỏ hàng Bookly"}</h1>
                 {isEmpty ? (
                     <></>
                 ) : (
@@ -23,10 +23,10 @@ const Cart = () => {
                         <table className="cart-table">
                             <thead>
                                 <tr>
-                                    <th>Sản phẩm</th>
+                                    <th className="thead-item">Sản phẩm</th>
                                     <th className="thead-price">Giá tiền</th>
-                                    <th>Số lượng</th>
-                                    <th></th>
+                                    <th className="thead-quantity">Số lượng</th>
+                                    <th className="thead-action"></th>
                                 </tr>
                             </thead>
                             <tbody>

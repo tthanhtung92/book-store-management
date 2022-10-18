@@ -39,13 +39,13 @@ const SignIn = () => {
             <div className={"container " + isActive} id="container">
                 <div className="form-container sign-up-container">
                     <form action="/#">
-                        <h1>Sign up</h1>
-                        <input type="text" placeholder="Name" />
+                        <h1>Đăng ký</h1>
+                        <input type="text" placeholder="Tên đầy đủ" />
                         <input type="email" placeholder="Email" />
-                        <input type="tel" placeholder="Phone Number" />
-                        <input type="password" placeholder="Password" />
-                        <button className="btn-SignUp">Sign Up</button>
-                        <span>or continue with</span>
+                        <input type="tel" placeholder="Số điện thoại" />
+                        <input type="password" placeholder="Mật khẩu" />
+                        <button className="btn-SignUp">Đăng ký</button>
+                        <span>hoặc đăng nhập với</span>
                         <div className="social-container">
                             <FcGoogle onClick={handleGoogleSignIn} />
                         </div>
@@ -53,34 +53,33 @@ const SignIn = () => {
                 </div>
                 <div className="form-container sign-in-container">
                     <form action="/#">
-                        <h1>Sign in</h1>
+                        <h1>Đăng nhập</h1>
                         <div className="social-container">
                             <FcGoogle onClick={handleGoogleSignIn} />
                         </div>
-                        <span>or use your account</span>
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
-                        <a href="/#">Forgot your password?</a>
-                        <button className="btn-SignIn">Sign In</button>
+                        <span>hoặc sử dụng tài khoản</span>
+                        <input type="email" placeholder="Tài khoản" />
+                        <input type="password" placeholder="Mật khẩu" />
+                        <a href="/#">Quên mật khẩu?</a>
+                        <button className="btn-SignIn">Đăng nhập</button>
                     </form>
                 </div>
                 <div className="overlay-container">
                     <div className="overlay">
                         <div className="overlay-panel overlay-left">
-                            <h1>Welcome Back!</h1>
-                            <p>To keep connected with us please login with your personal info</p>
+                            <h1>Đã có tài khoản?</h1>
+                            <p>Giữ kết nối với chúng tôi bằng cách đăng nhập</p>
                             <button className="ghost" id="signIn" onClick={handleClickSignIn}>
-                                Sign In
+                                Đăng nhập
                             </button>
                         </div>
                         <div className="overlay-panel overlay-right">
-                            <h1>Hello, Class!</h1>
+                            <h1>Bookly here!</h1>
                             <p>
-                                Don't have an account yet? Enter your personal details and start
-                                journey with us
+                                Bạn chưa có tài khoản? Nhập thông tin cá nhân để bắt đầu cuộc phiêu lưu!
                             </p>
                             <button className="ghost" id="signUp" onClick={handleClickSignUp}>
-                                Sign Up
+                                Đăng ký
                             </button>
                         </div>
                     </div>

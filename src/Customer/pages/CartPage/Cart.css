@@ -29,8 +29,20 @@
     text-align: left;
 }
 
+.thead-item {
+    min-width: 684px;
+}
+
 .thead-price {
     min-width: 160px;
+}
+
+.thead-quantity {
+    min-width: 100px;
+}
+
+.thead-action {
+    min-width: 236px;
 }
 
 .cart-table th,
@@ -166,6 +178,7 @@
 }
 
 .cart-footer__total {
+    color: var(--button-color);
     font-size: 3rem;
     margin: 0 8px;
     font-weight: 500;
