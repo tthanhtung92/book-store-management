@@ -11,11 +11,21 @@ import "./Cart.css";
 const Cart = () => {
     const { isEmpty, items, cartTotal, updateItemQuantity, removeItem, emptyCart } = useCart();
     // console.log(items[0].author);
+
+    //Format VNĐ
+    const formatCash = (n) => {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
     return (
         <>
             <Navbar />
             <div className="cart-container">
-                <h1 className="cart-title">{isEmpty ? "Còn cái nịt =)))" : "Dỏ hàng Bookly"}</h1>
+                <h1 className="cart-title">
+                    {isEmpty
+                        ? "Giỏ hàng trống, hãy thử chọn vài cuốn sách từ Bookly đi nào ^^"
+                        : "Giỏ hàng Bookly"}
+                </h1>
                 {isEmpty ? (
                     <></>
                 ) : (
@@ -57,7 +67,7 @@ const Cart = () => {
                                                 </div>
                                             </td>
                                             <td className="cart-table__book-price">
-                                                {item.price * item.quantity} VND
+                                                {formatCash(item.price * item.quantity) + " VNĐ"}
                                             </td>
                                             <td className="cart-table__book-quantity">
                                                 {item.quantity}
@@ -106,7 +116,9 @@ const Cart = () => {
                 )}
                 {!isEmpty && (
                     <div className="cart-footer">
-                        <h1 className="cart-footer__total">Tổng giá tiền: {cartTotal} VND</h1>
+                        <h1 className="cart-footer__total">
+                            Tổng giá tiền: {formatCash(cartTotal) + " VNĐ"}
+                        </h1>
                         <button className="pay-btn">Thanh toán</button>
                         <button className="clear-btn" onClick={() => emptyCart()}>
                             Clear giỏ hàng

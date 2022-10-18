@@ -22,6 +22,11 @@ function BookDetail(props) {
         addItem(props.data);
     };
 
+    //Format VNĐ
+    const formatCash = (n) => {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
     const addSuccess = () =>
         toast.success("📚 Thêm vào giỏ thành công!", {
             position: "top-right",
@@ -60,7 +65,9 @@ function BookDetail(props) {
 
                         {/* price */}
                         {/* <h1 className="bookDetail__detail-oldPrice">$27.95</h1> */}
-                        <h1 className="bookDetail__detail-newPrice">{price} VNĐ</h1>
+                        <h1 className="bookDetail__detail-newPrice">
+                            {formatCash(price) + " VNĐ"}
+                        </h1>
 
                         {/* status */}
                         <div className="bookDetail__detail-status">
@@ -89,7 +96,10 @@ function BookDetail(props) {
                         <div className="bookDetail__detail-detail mt-20">
                             <h1>Chi tiết sản phẩm</h1>
                             <span>
-                                Giá: <p className="bookDetail__detail-detail-price">{price} VNĐ</p>
+                                Giá:{" "}
+                                <p className="bookDetail__detail-detail-price">
+                                    {formatCash(price) + " VNĐ"}
+                                </p>
                             </span>
                             <br />
 

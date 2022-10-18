@@ -18,6 +18,11 @@ function Book(props) {
         addItem(props.data);
     };
 
+    //Format VNĐ
+    const formatCash = (n) => {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
     const addSuccess = () =>
         toast.success("📚 Thêm vào giỏ thành công!", {
             position: "top-right",
@@ -61,7 +66,7 @@ function Book(props) {
                 {/* Book Price */}
                 <div className="bookList__book-price">
                     {/* <div className="bookList__book-price-old">$22.95</div> */}
-                    <div className="bookList__book-price-new">{price} VNĐ</div>
+                    <div className="bookList__book-price-new">{formatCash(price) + " VNĐ"}</div>
                 </div>
 
                 <button

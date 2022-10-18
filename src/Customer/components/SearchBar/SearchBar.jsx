@@ -165,6 +165,12 @@ export function SearchBar(props) {
     const [bookShows, setBookShows] = useState([]);
     const [noBookShows, setNoBookShows] = useState(false);
 
+    //Format VNĐ
+    const formatCash = (n) => {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
+    // ---------------------------------------------------------------------------
     const isEmpty = !bookShows || bookShows.length === 0;
 
     const changeHandler = (e) => {
@@ -220,6 +226,7 @@ export function SearchBar(props) {
     };
 
     useDebounce(searchQuery, 500, searchBookShow);
+    // ---------------------------------------------------------------------------
 
     return (
         <SearchBarContainer
@@ -285,7 +292,9 @@ export function SearchBar(props) {
                                             <img src={item?.image} alt="" />
                                         </Thumbnail>
                                         <Name>{item?.bookName}</Name>
-                                        <Price>{item?.price || "N/A"} VNĐ</Price>
+                                        <Price>
+                                            {formatCash(item?.price) + " VNĐ" || "N/A"} VNĐ
+                                        </Price>
                                     </BookShowContainer>
                                 </Link>
                             ))}
