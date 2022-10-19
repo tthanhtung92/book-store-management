@@ -12,8 +12,8 @@ import ScrollToTop from "./Customer/components/ScrollToTop/ScrollToTop";
 import Error from "./Customer/pages/500/Error";
 
 //For cart
-import Success from "./Customer/pages/Success/Success";
-import Cancel from "./Customer/pages/Cancel/Cancel";
+import Success from "./Customer/pages/SuccessPage/Success";
+import Cancel from "./Customer/pages/CancelPage/Cancel";
 
 export default function App() {
     return (
