@@ -11,6 +11,10 @@ import Protected from "./Customer/components/Protected/Protected";
 import ScrollToTop from "./Customer/components/ScrollToTop/ScrollToTop";
 import Error from "./Customer/pages/500/Error";
 
+//For cart
+import Success from "./Customer/pages/Success/Success";
+import Cancel from "./Customer/pages/Cancel/Cancel";
+
 export default function App() {
     return (
         <AuthContextProvider>
@@ -31,6 +35,10 @@ export default function App() {
                             </Protected>
                         }
                     />
+
+                    {/* For cart payment */}
+                    <Route path="success" element={<Success />} />
+                    <Route path="cancel" element={<Cancel />} />
                 </Routes>
             </BrowserRouter>
         </AuthContextProvider>

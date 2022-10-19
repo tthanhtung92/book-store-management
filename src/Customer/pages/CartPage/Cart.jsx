@@ -10,11 +10,30 @@ import "./Cart.css";
 
 const Cart = () => {
     const { isEmpty, items, cartTotal, updateItemQuantity, removeItem, emptyCart } = useCart();
-    // console.log(items[0].author);
+    console.log(items);
 
     //Format VNĐ
     const formatCash = (n) => {
         return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
+    //Checkout
+    const checkout = async () => {
+        await fetch("http://localhost:4000/checkout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ items: items }),
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                if (response.url) {
+                    window.location.assign(response.url);
+                }
+            });
     };
 
     return (
@@ -119,7 +138,9 @@ const Cart = () => {
                         <h1 className="cart-footer__total">
                             Tổng giá tiền: {formatCash(cartTotal) + " VNĐ"}
                         </h1>
-                        <button className="pay-btn">Thanh toán</button>
+                        <button className="pay-btn" onClick={checkout}>
+                            Thanh toán
+                        </button>
                         <button className="clear-btn" onClick={() => emptyCart()}>
                             Clear giỏ hàng
                         </button>
