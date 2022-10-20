@@ -20,13 +20,11 @@ const FieldDetail = () => {
             try {
                 const res = await fieldApi.getById(fieldId);
                 setBooks(res.data[0].books);
-                console.log(res.data[0].books);
+                // console.log(res.data[0].books);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");
             }
-            setTimeout(() => {
-                setLoading(false);
-            }, 1000);
+            setLoading(false);
         };
         getBooks();
     }, [fieldId]);

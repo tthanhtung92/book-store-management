@@ -6,11 +6,16 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 import { RiSubtractFill, RiAddCircleLine } from "react-icons/ri";
 import { useCart } from "react-use-cart";
+import { UserAuth } from "../../context/AuthContext";
 import "./Cart.css";
 
 const Cart = () => {
+    //firebase user provider
+    const { user } = UserAuth();
+
+    //use cart provider
     const { isEmpty, items, cartTotal, updateItemQuantity, removeItem, emptyCart } = useCart();
-    console.log(items);
+    // console.log(items);
 
     //Format VNĐ
     const formatCash = (n) => {
@@ -138,9 +143,18 @@ const Cart = () => {
                         <h1 className="cart-footer__total">
                             Tổng giá tiền: {formatCash(cartTotal) + " VNĐ"}
                         </h1>
-                        <button className="pay-btn" onClick={checkout}>
-                            Thanh toán
-                        </button>
+
+                        {/* Kiểm tra user có đăng nhập hay chưa */}
+                        {user ? (
+                            <button className="pay-btn" onClick={checkout}>
+                                Thanh toán
+                            </button>
+                        ) : (
+                            <Link to="/signIn">
+                                <button className="pay-btn">Đăng nhập</button>
+                            </Link>
+                        )}
+
                         <button className="clear-btn" onClick={() => emptyCart()}>
                             Clear giỏ hàng
                         </button>

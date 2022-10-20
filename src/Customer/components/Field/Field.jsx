@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./Field.css";
 
@@ -37,9 +36,7 @@ function Field(props) {
                                 alt=""
                                 className="content__header-logo"
                             />
-                            <h1 className="content__header-name">
-                                {item?.fieldName || <Skeleton />}
-                            </h1>
+                            <h1 className="content__header-name">{item?.fieldName}</h1>
                         </div>
                         <Link to={`/field/${item?.fieldID}`}>
                             <button className="btn-primary">XEM TẤT CẢ</button>
@@ -51,51 +48,55 @@ function Field(props) {
                             <div className="column">
                                 <Link to={`/bookDetail/${item?.books[0]?.bookID}`}>
                                     <img
-                                        src={item?.books[0]?.image || <Skeleton />}
+                                        src={item?.books[0]?.image}
                                         alt=""
                                         className="book"
+                                        loading="lazy"
                                     />
                                 </Link>
                             </div>
                             <div className="column">
                                 <Link to={`/bookDetail/${item?.books[1]?.bookID}`}>
                                     <img
-                                        src={item?.books[1]?.image || <Skeleton />}
+                                        src={item?.books[1]?.image}
                                         alt=""
                                         className="book"
+                                        loading="lazy"
                                     />
                                 </Link>
                             </div>
                             <div className="column">
                                 <Link to={`/bookDetail/${item?.books[2]?.bookID}`}>
                                     <img
-                                        src={item?.books[2]?.image || <Skeleton />}
+                                        src={item?.books[2]?.image}
                                         alt=""
                                         className="book"
+                                        loading="lazy"
                                     />
                                 </Link>
                             </div>
                             <div className="column">
                                 <Link to={`/bookDetail/${item?.books[3]?.bookID}`}>
                                     <img
-                                        src={item?.books[3]?.image || <Skeleton />}
+                                        src={item?.books[3]?.image}
                                         alt=""
                                         className="book"
+                                        loading="lazy"
                                     />
                                 </Link>
                             </div>
                             <div className="column">
                                 <Link to={`/bookDetail/${item?.books[4]?.bookID}`}>
                                     <img
-                                        src={item?.books[4]?.image || <Skeleton />}
+                                        src={item?.books[4]?.image}
                                         alt=""
                                         className="book"
+                                        loading="lazy"
                                     />
                                 </Link>
                             </div>
                         </div>
                     </div>
-   
                 </div>
             ))}
             <ReactPaginate

@@ -16,23 +16,8 @@ const Profile = () => {
                     <p>Email: {user?.email}</p>
 
                     <div className="profile__content-item">
-                        <h2>My saved card</h2>
-                        <p>You have no saved cards.</p>
-                    </div>
-
-                    <div className="profile__content-item">
-                        <h2>My Orders</h2>
-                        <p>You have no saved cards.</p>
-                    </div>
-
-                    <div className="profile__content-item">
-                        <h2>My Gift Cards</h2>
-                        <p>You have no saved cards.</p>
-                    </div>
-
-                    <div className="profile__content-item">
-                        <h2>My Wishlists and Registries</h2>
-                        <p>My Wishlist</p>
+                        <h2>Order của bạn</h2>
+                        <p>Bạn chưa có order nào</p>
                     </div>
                 </div>
             </div>

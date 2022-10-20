@@ -4,7 +4,8 @@
 .profile__wrap {
     display: flex;
     justify-content: center;
-    margin: 64px 0;
+    margin-top: var(--navbar-height);
+    height: calc(100vh - 328px);
 }
 
 .profile__content {

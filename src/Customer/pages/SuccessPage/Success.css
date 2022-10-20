@@ -60,12 +60,13 @@
 .success-container__back {
     opacity: 0;
     border: none;
-    padding: 10px;
+    padding: 10px 16px;
     border-radius: 999px;
     cursor: pointer;
     background-color: #5de593;
     color: var(--white-color);
     font-size: 1.6rem;
+    line-height: 1.6rem;
     animation: animatedNotification 0.75s ease-out forwards 0.75s;
 }
 

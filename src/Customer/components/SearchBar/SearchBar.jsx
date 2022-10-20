@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
 import { IoClose, IoSearch } from "react-icons/io5";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useClickOutside } from "react-click-outside-hook";
 import { useEffect } from "react";
 import { useRef } from "react";
-import MoonLoader from "react-spinners/MoonLoader";
 import { useDebounce } from "../../hooks/debounceHook";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import MoonLoader from "react-spinners/MoonLoader";
+import React from "react";
+import styled from "styled-components";
+import bookApi from "../../api/bookApi";
 import "./SearchBar.css";
 
 const SearchBarContainer = styled(motion.div)`
@@ -197,21 +197,13 @@ export function SearchBar(props) {
         if (isClickedOutside) collapseContainer();
     }, [isClickedOutside]);
 
-    const prepareSearchQuery = (query) => {
-        const url = `https://localhost:7091/Book/GetByName/${query}`;
-
-        return encodeURI(url);
-    };
-
     const searchBookShow = async () => {
         if (!searchQuery || searchQuery.trim() === "") return;
 
         setLoading(true);
         setNoBookShows(false);
 
-        const URL = prepareSearchQuery(searchQuery);
-
-        const response = await axios.get(URL).catch((err) => {
+        const response = await bookApi.getByName(searchQuery).catch((err) => {
             console.log("Error: ", err);
         });
 
@@ -293,7 +285,7 @@ export function SearchBar(props) {
                                         </Thumbnail>
                                         <Name>{item?.bookName}</Name>
                                         <Price>
-                                            {formatCash(item?.price) + " VNĐ" || "N/A"} VNĐ
+                                            {formatCash(item?.price) + " VNĐ" || "N/A"}
                                         </Price>
                                     </BookShowContainer>
                                 </Link>

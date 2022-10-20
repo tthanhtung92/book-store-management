@@ -1,4 +1,4 @@
-import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { Component } from "react";
 import "./Footer.css";
 
@@ -31,7 +31,6 @@ export default class Footer extends Component {
                         <a href="/#">
                             <BsFacebook className="footer__wrap-right-item" />
                             <BsInstagram className="footer__wrap-right-item" />
-                            <BsYoutube className="footer__wrap-right-item" />
                         </a>
                     </div>
                 </div>

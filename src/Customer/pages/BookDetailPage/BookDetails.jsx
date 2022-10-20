@@ -17,7 +17,7 @@ function BookDetails() {
                 const res = await bookApi.getById(bookId);
 
                 setBooks(res.data);
-                console.log(res.data);
+                // console.log(res.data);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");
             }

@@ -154,12 +154,15 @@ function Navbar(props) {
                             <Link to="/profile" className="navbar__right-menu-item">
                                 <MenuItem
                                     sx={{
-                                        marginBottom: "8px",
                                         display: "flex",
                                         alignItems: "center",
+                                        paddingLeft: "32px",
+                                        fontSize: "1.6rem",
+                                        lineHeight: "1.6rem",
                                     }}
                                 >
-                                    <Avatar src={user?.photoURL} /> Profile
+                                    <Avatar src={user?.photoURL} sx={{ marginBottom: "4px" }} /> Hồ
+                                    sơ
                                 </MenuItem>
                             </Link>
                             <Divider />
@@ -167,18 +170,32 @@ function Navbar(props) {
                             <MenuItem
                                 onClick={handleSignOut}
                                 className="navbar__right-menu-item"
-                                sx={{ fontSize: "1.6rem", marginTop: "8px" }}
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    fontSize: "1.6rem",
+                                    lineHeight: "1.6rem",
+                                    marginTop: "8px",
+                                    paddingRight: "24px",
+                                }}
                             >
-                                <ListItemIcon>
+                                <ListItemIcon
+                                    sx={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        marginBottom: "2px",
+                                    }}
+                                >
                                     <Logout fontSize="large" />
                                 </ListItemIcon>
-                                Logout
+                                Đăng xuất
                             </MenuItem>
                         </Menu>
                     </React.Fragment>
                 ) : (
                     <Link to="/signIn" className="navbar__right-login-text">
-                        Sign in
+                        Đăng nhập
                     </Link>
                 )}
                 {!isEmpty && (

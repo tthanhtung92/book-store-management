@@ -23,9 +23,7 @@ function Home() {
                 setError(err);
                 console.log("Không lấy được dữ liệu từ API");
             }
-            setTimeout(() => {
-                setLoading(false);
-            }, 1000);
+            setLoading(false);
         };
         // gọi hàm
         Data();

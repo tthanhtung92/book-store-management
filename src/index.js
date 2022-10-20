@@ -1,14 +1,14 @@
+import { CartProvider } from "react-use-cart";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
-import { CartProvider } from "react-use-cart";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-      <CartProvider>
-        <App />
-      </CartProvider>
+        <CartProvider>
+            <App />
+        </CartProvider>
     </React.StrictMode>
 );

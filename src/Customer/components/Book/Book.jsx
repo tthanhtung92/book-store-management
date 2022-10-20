@@ -43,10 +43,7 @@ function Book(props) {
                 <div className="bookList__book-wrapper">
                     <Link to={`/bookDetail/${bookID}`} className="bookList__book-cover">
                         <div className="bookList__book-image">
-                            <img
-                                alt="Good Inside: A Guide to Becoming the Parent You Want to Be"
-                                src={image}
-                            />
+                            <img alt="" src={image} loading="lazy" />
                         </div>
                     </Link>
                 </div>
