@@ -157,9 +157,9 @@ const Price = styled.span`
 const containerTransition = { type: "spring", damping: 22, stiffness: 150 };
 
 export function SearchBar(props) {
+    const inputRef = useRef();
     const [isExpanded, setExpanded] = useState(false);
     const [parentRef, isClickedOutside] = useClickOutside();
-    const inputRef = useRef();
     const [searchQuery, setSearchQuery] = useState("");
     const [isLoading, setLoading] = useState(false);
     const [bookShows, setBookShows] = useState([]);
@@ -197,6 +197,7 @@ export function SearchBar(props) {
         if (isClickedOutside) collapseContainer();
     }, [isClickedOutside]);
 
+    //call api search
     const searchBookShow = async () => {
         if (!searchQuery || searchQuery.trim() === "") return;
 
@@ -218,6 +219,7 @@ export function SearchBar(props) {
     };
 
     useDebounce(searchQuery, 500, searchBookShow);
+    // console.log(searchQuery.trim())
     // ---------------------------------------------------------------------------
 
     return (
@@ -284,9 +286,7 @@ export function SearchBar(props) {
                                             <img src={item?.image} alt="" />
                                         </Thumbnail>
                                         <Name>{item?.bookName}</Name>
-                                        <Price>
-                                            {formatCash(item?.price) + " VNĐ" || "N/A"}
-                                        </Price>
+                                        <Price>{formatCash(item?.price) + " VNĐ" || "N/A"}</Price>
                                     </BookShowContainer>
                                 </Link>
                             ))}

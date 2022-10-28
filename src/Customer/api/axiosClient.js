@@ -1,9 +1,13 @@
 import axios from "axios";
 
+const jwt = JSON.parse(localStorage.getItem("jwt"));
+
 const axiosClient = axios.create({
     baseURL: "https://localhost:7091/",
     headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json; charset=utf-8",
+        Accept: "application/json",
+        Authorization: `bearer ${jwt}`,
     },
 });
 

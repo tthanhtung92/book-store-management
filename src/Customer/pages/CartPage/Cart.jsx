@@ -1,12 +1,12 @@
-import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 import { RiSubtractFill, RiAddCircleLine } from "react-icons/ri";
 import { useCart } from "react-use-cart";
 import { UserAuth } from "../../context/AuthContext";
+import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 import "./Cart.css";
 
 const Cart = () => {
@@ -146,7 +146,12 @@ const Cart = () => {
 
                         {/* Kiểm tra user có đăng nhập hay chưa */}
                         {user ? (
-                            <button className="pay-btn" onClick={checkout}>
+                            <button
+                                className="pay-btn"
+                                onClick={() => {
+                                    checkout();
+                                }}
+                            >
                                 Thanh toán
                             </button>
                         ) : (

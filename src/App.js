@@ -6,6 +6,7 @@ import BookDetail from "./Customer/pages/BookDetailPage/BookDetails";
 import Home from "./Customer/pages/HomePage/Home";
 import SignIn from "./Customer/pages/SignInPage/SignIn";
 import Profile from "./Customer/pages/ProfilePage/Profile";
+import OrderDetail from "./Customer/pages/OrderDetailPage/OrderDetail";
 import Cart from "./Customer/pages/CartPage/Cart";
 import Protected from "./Customer/components/Protected/Protected";
 import ScrollToTop from "./Customer/components/ScrollToTop/ScrollToTop";
@@ -35,6 +36,7 @@ export default function App() {
                             </Protected>
                         }
                     />
+                    <Route path="/orderDetail/:orderId" element={<OrderDetail />} />
 
                     {/* For cart payment */}
                     <Route path="success" element={<Success />} />

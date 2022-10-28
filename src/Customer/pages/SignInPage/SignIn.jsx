@@ -3,9 +3,13 @@ import "./SignIn.css";
 import { FcGoogle } from "react-icons/fc";
 import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import authApi from "../../api/authApi";
 
 const SignIn = () => {
     const [isActive, setPanelActive] = useState("");
+    const [jwt, setJwt] = useState("");
+    const [accountId, setAccountId] = useState("");
+    const navigate = useNavigate();
 
     const handleClickSignUp = () => {
         setPanelActive("right-panel-active");
@@ -16,9 +20,7 @@ const SignIn = () => {
     };
 
     // Login with google
-    const navigate = useNavigate();
-
-    const { googleSignIn, user } = UserAuth();
+    const { googleSignIn, user, token } = UserAuth();
 
     const handleGoogleSignIn = async () => {
         try {
@@ -28,11 +30,27 @@ const SignIn = () => {
         }
     };
 
+    console.log(token);
+
     useEffect(() => {
         if (user != null) {
+            //send access token
+            const send = async () => {
+                try {
+                    const res = await authApi.verifyAccessToken(token);
+                    setJwt(res?.data?.jwt);
+                    localStorage.setItem("jwt", JSON.stringify(res?.data?.jwt));
+                    setAccountId(res?.data?.accountId);
+                    localStorage.setItem("accountId", JSON.stringify(res?.data?.accountId));
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+
+            send();
             navigate("/");
         }
-    }, [user, navigate]);
+    }, [user, token, jwt, accountId, navigate]);
 
     return (
         <div className="formMain">
@@ -55,7 +73,11 @@ const SignIn = () => {
                     <form action="/#">
                         <h1>Đăng nhập</h1>
                         <div className="social-container">
-                            <FcGoogle onClick={handleGoogleSignIn} />
+                            <FcGoogle
+                                onClick={() => {
+                                    handleGoogleSignIn();
+                                }}
+                            />
                         </div>
                         <span>hoặc sử dụng tài khoản</span>
                         <input type="email" placeholder="Tài khoản" />
@@ -76,7 +98,8 @@ const SignIn = () => {
                         <div className="overlay-panel overlay-right">
                             <h1>Bookly here!</h1>
                             <p>
-                                Bạn chưa có tài khoản? Nhập thông tin cá nhân để bắt đầu cuộc phiêu lưu!
+                                Bạn chưa có tài khoản? Nhập thông tin cá nhân để bắt đầu cuộc phiêu
+                                lưu!
                             </p>
                             <button className="ghost" id="signUp" onClick={handleClickSignUp}>
                                 Đăng ký
