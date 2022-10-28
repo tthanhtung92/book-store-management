@@ -18,7 +18,7 @@ function Success() {
             try {
                 const res = await orderApi.create(accId);
                 if (res) {
-                    console.log("thanh cong, res:", res.data);
+                    // console.log("thanh cong, res:", res.data);
                     setOrderId(res.data);
                 }
             } catch (error) {
@@ -48,7 +48,7 @@ function Success() {
                     console.log(b);
                     const res = await orderDetailApi.create(b);
                     if (res) {
-                        console.log("thanh conggggggg: ");
+                        console.log("SUCESSFULLY!");
                     }
                 } catch (error) {
                     console.log("Không tạo được orderDetail");

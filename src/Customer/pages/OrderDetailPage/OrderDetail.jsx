@@ -9,6 +9,10 @@ const OrderDetail = () => {
     const { orderId } = useParams();
     const [orders, setOrders] = useState([]);
 
+    const formatCash = (n) => {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
     useEffect(() => {
         const Data = async () => {
             try {
@@ -27,14 +31,23 @@ const OrderDetail = () => {
         <>
             <Navbar />
             <div className="order-detail-container">
-                <div className="order-detail-table">
+                <div className="order-detail-wrap">
                     {orders.map((item, index) => (
-                        <div key={index}>
-                            <p>Tên sách: {item?.book?.bookName}</p>
-                            <p>
-                                Số lượng: {item?.quantity}, Giá tiền: {item?.price}, Tổng giá tiền:{" "}
-                                {item?.totalPrice}
-                            </p>
+                        <div className="order-detail-wrap__item" key={index}>
+                            <div className="order-detail-wrap__item-details">
+                                <img
+                                    className="order-detail-wrap__item-img"
+                                    src={item?.book?.image}
+                                    alt=""
+                                />
+                                <div className="order-detail-wrap__item-detail">
+                                    <p className="order-detail-wrap__item-detail-header">{item?.book?.bookName}</p>
+                                    <p>Số lượng: {item?.quantity}</p>
+                                    <p>Giá tiền: {formatCash(item?.price) + " VNĐ"}</p>
+                                </div>
+                            </div>
+
+                            <p>Tổng: {formatCash(item?.totalPrice) + " VNĐ"}</p>
                         </div>
                     ))}
                 </div>

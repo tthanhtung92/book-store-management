@@ -13,7 +13,7 @@
 .formMain h1 {
     font-family: monospace;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 4.2rem;
     margin-bottom: 10px;
 }
 
@@ -23,7 +23,7 @@
 
 .formMain p {
     font-family: monospace;
-    font-size: 14px;
+    font-size: 1.8rem;
     font-weight: 100;
     line-height: 20px;
     letter-spacing: 0.5px;
@@ -32,13 +32,13 @@
 
 .formMain span {
     font-family: monospace;
-    font-size: 12px;
+    font-size: 1.6rem;
 }
 
 .formMain a {
     font-family: monospace;
     color: #333;
-    font-size: 14px;
+    font-size: 1.6rem;
     text-decoration: none;
     margin: 15px 0;
 }
@@ -102,9 +102,9 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
-    width: 900px;
+    width: 1080px;
     max-width: 100%;
-    min-height: 570px;
+    min-height: 720px;
     animation: bobbingAnim ease-in 1s;
 }
 

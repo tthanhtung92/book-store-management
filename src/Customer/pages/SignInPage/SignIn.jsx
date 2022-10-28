@@ -30,8 +30,6 @@ const SignIn = () => {
         }
     };
 
-    console.log(token);
-
     useEffect(() => {
         if (user != null) {
             //send access token
