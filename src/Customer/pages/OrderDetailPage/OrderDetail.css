@@ -4,6 +4,7 @@
     margin-top: var(--navbar-height);
     padding: 40px 0 131px;
     height: auto;
+    min-height: 647px;
 }
 
 .order-detail-wrap {

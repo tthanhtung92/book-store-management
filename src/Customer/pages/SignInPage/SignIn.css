@@ -5,13 +5,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: "Montserrat", sans-serif;
+    /* font-family: "Montserrat", sans-serif; */
     height: 100vh;
     margin: 0;
 }
 
 .formMain h1 {
-    font-family: monospace;
+    /* font-family: monospace; */
     font-weight: bold;
     font-size: 4.2rem;
     margin-bottom: 10px;
@@ -22,21 +22,22 @@
 }
 
 .formMain p {
-    font-family: monospace;
+    /* font-family: monospace; */
     font-size: 1.8rem;
     font-weight: 100;
     line-height: 20px;
     letter-spacing: 0.5px;
     margin: 20px 0 30px;
+    max-width: 350px;
 }
 
 .formMain span {
-    font-family: monospace;
+    /* font-family: monospace; */
     font-size: 1.6rem;
 }
 
 .formMain a {
-    font-family: monospace;
+    /* font-family: monospace; */
     color: #333;
     font-size: 1.6rem;
     text-decoration: none;
