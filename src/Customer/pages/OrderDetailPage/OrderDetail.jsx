@@ -41,9 +41,12 @@ const OrderDetail = () => {
                                     alt=""
                                 />
                                 <div className="order-detail-wrap__item-detail">
-                                    <p className="order-detail-wrap__item-detail-header">{item?.book?.bookName}</p>
-                                    <p>Số lượng: {item?.quantity}</p>
+                                    <p className="order-detail-wrap__item-detail-header">
+                                        {item?.book?.bookName}
+                                    </p>
+                                    <p>Ngày xuất bản: {item?.book?.dateOfPublished.slice(0, 10)}</p>
                                     <p>Giá tiền: {formatCash(item?.price) + " VNĐ"}</p>
+                                    <p>Số lượng: {item?.quantity}</p>
                                 </div>
                             </div>
 

@@ -5,7 +5,7 @@
     align-items: center;
     margin-top: calc(var(--navbar-height) + 64px);
     margin-bottom: 194px;
-    min-height: 352px;
+    min-height: 389px;
 }
 
 .cart-title {
