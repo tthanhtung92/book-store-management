@@ -23,7 +23,7 @@ export const AuthContextProvider = ({ children }) => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setToken(currentUser?.accessToken);
-            console.log(currentUser?.accessToken);
+            // console.log(currentUser?.accessToken);
         });
         return () => {
             unsubcribe();

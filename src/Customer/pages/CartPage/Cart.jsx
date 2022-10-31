@@ -4,18 +4,19 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { RiSubtractFill, RiAddCircleLine } from "react-icons/ri";
 import { useCart } from "react-use-cart";
 import { UserAuth } from "../../context/AuthContext";
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./Cart.css";
 
 const Cart = () => {
-    //firebase user provider
     const { user } = UserAuth();
-
-    //use cart provider
     const { isEmpty, items, cartTotal, updateItemQuantity, removeItem, emptyCart } = useCart();
-    // console.log(items);
+
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
 
     //Format VNĐ
     const formatCash = (n) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./Customer/context/AuthContext";
 import FieldDetail from "./Customer/pages/FieldPage/FieldDetail";
@@ -9,7 +9,6 @@ import Profile from "./Customer/pages/ProfilePage/Profile";
 import OrderDetail from "./Customer/pages/OrderDetailPage/OrderDetail";
 import Cart from "./Customer/pages/CartPage/Cart";
 import Protected from "./Customer/components/Protected/Protected";
-import ScrollToTop from "./Customer/components/ScrollToTop/ScrollToTop";
 import Error from "./Customer/pages/500/Error";
 
 //For cart
@@ -17,10 +16,15 @@ import Success from "./Customer/pages/SuccessPage/Success";
 import Cancel from "./Customer/pages/CancelPage/Cancel";
 
 export default function App() {
+
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
+
     return (
         <AuthContextProvider>
             <BrowserRouter>
-                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/500" element={<Error />} />
@@ -42,6 +46,7 @@ export default function App() {
                     <Route path="success" element={<Success />} />
                     <Route path="cancel" element={<Cancel />} />
                 </Routes>
+                
             </BrowserRouter>
         </AuthContextProvider>
     );
