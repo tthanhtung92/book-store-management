@@ -139,7 +139,7 @@ function Navbar(props) {
                                         display: "block",
                                         position: "absolute",
                                         top: 0,
-                                        right: 14,
+                                        right: 20,
                                         width: 10,
                                         height: 10,
                                         bgcolor: "background.paper",
@@ -175,8 +175,9 @@ function Navbar(props) {
                                     alignItems: "center",
                                     fontSize: "1.6rem",
                                     lineHeight: "1.6rem",
-                                    marginTop: "8px",
+                                    paddingTop: "14px",
                                     paddingRight: "24px",
+                                    height: "100%",
                                 }}
                             >
                                 <ListItemIcon

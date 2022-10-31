@@ -113,7 +113,7 @@ function BookDetail(props) {
                             </span>
                             <br />
                             <span>
-                                Ngôn ngữ: <p>Tiếng việt</p>
+                                Ngôn ngữ: <p>Tiếng Việt</p>
                             </span>
                             <br />
                         </div>
