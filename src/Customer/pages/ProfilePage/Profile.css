@@ -1,7 +1,7 @@
 .profile__wrap {
     display: flex;
     justify-content: center;
-    margin-top: var(--navbar-height);
+    margin-top: calc(var(--navbar-height) + var(--turnover-height));
     height: 100vh;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .profile__content p {
-    color: var(--text-color);
+    color: #573BAB;
     font-family: IBM Plex Sans, sans-serif;
     font-size: 2.2rem;
     line-height: 2.2rem;
@@ -63,5 +63,5 @@
 }
 
 .order-details__item-order-date-p {
-    color: var(--text-color);
+    color: #573bab;
 }

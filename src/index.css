@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 body::-webkit-scrollbar {
@@ -15,6 +16,7 @@ body::-webkit-scrollbar {
     --footer-color: #2b0f42;
 
     --navbar-height: 118px;
+    --turnover-height: 51px;
     --footer-height: 210px;
 }
 
@@ -34,7 +36,7 @@ html {
 .btn-primary {
     width: 192px;
     height: 38px;
-    border-radius: 14px;
+    border-radius: 999px;
     background-color: var(--button-color);
     border: none;
     font-family: IBM Plex Sans, sans-serif;

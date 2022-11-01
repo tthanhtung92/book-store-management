@@ -12,6 +12,7 @@ const FieldDetail = () => {
     //----------------------------
     const { fieldId } = useParams();
     const [books, setBooks] = useState([]);
+    const [field, setField] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -25,7 +26,8 @@ const FieldDetail = () => {
             try {
                 const res = await fieldApi.getById(fieldId);
                 setBooks(res.data[0].books);
-                // console.log(res.data[0].books);
+                setField(res.data);
+                console.log(res.data);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");
             }
@@ -39,6 +41,17 @@ const FieldDetail = () => {
         <div className="main">
             {/* Navbar */}
             <Navbar />
+
+            {field.map((item, index) => (
+                <div className="field-name" key={index}>
+                    <div className="fieldName-container">
+                        <h1>{item?.fieldName}</h1>
+                        <div className="fieldName-container__desc">
+                            <p>{item?.fieldDescription}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
 
             <div className="bookListContainer">
                 <div className="bookList">

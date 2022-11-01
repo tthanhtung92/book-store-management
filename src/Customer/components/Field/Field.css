@@ -9,6 +9,7 @@
     height: 82px;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 8px;
 }
 
 .content__header-left {

@@ -15,14 +15,14 @@ import "./SearchBar.css";
 const SearchBarContainer = styled(motion.div)`
     display: flex;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     flex-direction: column;
     margin: 16px 0;
     width: 68em;
     height: 3.8em;
     left: 50%;
     background-color: #fff;
-    border-radius: 6px;
+    border-radius: 99px;
     box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
     transform: translate(-50%);
 `;
@@ -41,7 +41,7 @@ const SearchInput = styled.input`
     height: 100%;
     outline: none;
     border: none;
-    font-size: 21px;
+    font-size: 18px;
     color: #12112e;
     font-weight: 500;
     border-radius: 6px;
@@ -53,6 +53,7 @@ const SearchInput = styled.input`
         }
     }
     &::placeholder {
+        font-size: 18px;
         color: #bebebe;
         transition: all 250ms ease-in-out;
     }
@@ -60,7 +61,7 @@ const SearchInput = styled.input`
 
 const SearchIcon = styled.span`
     color: #bebebe;
-    font-size: 27px;
+    font-size: 22px;
     vertical-align: middle;
     padding: 0 4px;
 `;
@@ -110,9 +111,11 @@ const WarningMessage = styled.span`
 
 const containerVariants = {
     expanded: {
+        borderRadius: "20px",
         height: "30em",
     },
     collapsed: {
+        borderRadius: "20px",
         height: "3.8em",
     },
 };
@@ -121,6 +124,7 @@ const containerVariants = {
 const BookShowContainer = styled.div`
     height: 100%;
     display: flex;
+    z-index: 2;
     border-bottom: 2px solid #d8d8d852;
     padding: 6px 8px;
     align-items: center;

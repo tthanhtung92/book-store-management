@@ -1,7 +1,7 @@
 .order-detail-container {
     display: flex;
     justify-content: center;
-    margin-top: var(--navbar-height);
+    margin-top: calc(var(--navbar-height) + var(--turnover-height));
     padding: 40px 0 131px;
     height: auto;
     min-height: 647px;

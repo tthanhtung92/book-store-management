@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import BookDetail from "../../components/BookDetail/BookDetail";
 import bookApi from "../../api/bookApi";
-import "./BookDetails.css";
 
 function BookDetails() {
     const { bookId } = useParams();

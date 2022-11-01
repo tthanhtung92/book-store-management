@@ -1,5 +1,5 @@
 .bookDetail {
-    margin-top: calc(var(--navbar-height) + 84px);
+    margin-top: calc(var(--navbar-height) + 84px + var(--turnover-height));
     margin-bottom: 84px;
     display: flex;
     justify-content: center;

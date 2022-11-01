@@ -1,7 +1,7 @@
 /* SILDER */
 .slider {
     width: 100%;
-    margin-top: var(--navbar-height);
+    margin-top: calc(var(--navbar-height) + 52px);
 }
 
 .slider__item {
