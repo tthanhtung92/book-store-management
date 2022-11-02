@@ -20,7 +20,8 @@ const SignIn = () => {
     };
 
     // Login with google
-    const { googleSignIn, user, token } = UserAuth();
+    const { googleSignIn, user, token, newUser } = UserAuth();
+    console.log(newUser)
 
     const handleGoogleSignIn = async () => {
         try {
@@ -49,7 +50,11 @@ const SignIn = () => {
             send();
             navigate("/");
         }
-    }, [user, token, jwt, accountId, navigate]);
+
+        if(newUser){
+            navigate("/verify")
+        }
+    }, [user, newUser, token, jwt, accountId, navigate]);
 
     return (
         <div className="formMain">

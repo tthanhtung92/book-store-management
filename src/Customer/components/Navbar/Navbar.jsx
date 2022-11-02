@@ -61,7 +61,7 @@ function Navbar(props) {
     useEffect(() => {
         const Data = async () => {
             try {
-                const res = await fieldApi.get5Row();
+                const res = await fieldApi.get8Row();
                 setSuggests(res.data);
             } catch (error) {
                 console.log("Không lấy được dữ liệu từ API");

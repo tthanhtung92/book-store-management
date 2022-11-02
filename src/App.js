@@ -9,25 +9,26 @@ import Profile from "./Customer/pages/ProfilePage/Profile";
 import OrderDetail from "./Customer/pages/OrderDetailPage/OrderDetail";
 import Cart from "./Customer/pages/CartPage/Cart";
 import Protected from "./Customer/components/Protected/Protected";
+
+//special
 import Error from "./Customer/pages/500/Error";
+import VerifyAccount from "./Customer/pages/VerifyAccountPage/VerifyAccount";
 
 //For cart
 import Success from "./Customer/pages/SuccessPage/Success";
 import Cancel from "./Customer/pages/CancelPage/Cancel";
 
 export default function App() {
-
     useEffect(() => {
         // 👇️ scroll to top on page load
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
 
     return (
         <AuthContextProvider>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/500" element={<Error />} />
                     <Route path="/signIn" element={<SignIn />} />
                     <Route path="/field/:fieldId" element={<FieldDetail />} />
                     <Route path="/bookDetail/:bookId" element={<BookDetail />} />
@@ -43,10 +44,27 @@ export default function App() {
                     <Route path="/orderDetail/:orderId" element={<OrderDetail />} />
 
                     {/* For cart payment */}
-                    <Route path="success" element={<Success />} />
-                    <Route path="cancel" element={<Cancel />} />
+                    <Route
+                        path="success"
+                        element={
+                            <Protected>
+                                <Success />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="cancel"
+                        element={
+                            <Protected>
+                                <Cancel />
+                            </Protected>
+                        }
+                    />
+
+                    {/* Special */}
+                    <Route path="/500" element={<Error />} />
+                    <Route path="/verify" element={<VerifyAccount />} />
                 </Routes>
-                
             </BrowserRouter>
         </AuthContextProvider>
     );

@@ -24,7 +24,7 @@ function Book(props) {
     };
 
     const addSuccess = () =>
-        toast.success("📚 Thêm vào giỏ thành công!", {
+        toast.success("📒 Thêm vào giỏ thành công!", {
             position: "top-right",
             autoClose: 1500,
             hideProgressBar: false,
@@ -33,7 +33,7 @@ function Book(props) {
             draggable: false,
             progress: 0,
             theme: "light",
-            style: { fontSize: "18px" },
+            style: { fontSize: "18px", borderRadius: "6px" },
         });
 
     return (

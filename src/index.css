@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
     --footer-color: #2b0f42;
 
     --navbar-height: 118px;
-    --turnover-height: 51px;
+    --turnover-height: 40px;
     --footer-height: 210px;
 }
 
@@ -48,7 +48,23 @@ html {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-primary:hover {
+.btn-primary-medium {
+    width: 96px;
+    height: 38px;
+    border-radius: 999px;
+    background-color: var(--button-color);
+    border: none;
+    font-family: IBM Plex Sans, sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    cursor: pointer;
+    margin-right: 4px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover,
+.btn-primary-medium:hover {
     background-color: #bf1f49;
     box-shadow: 1px 7px 13px 0px rgb(67 0 17 / 13%);
     transform: scale(1.02);

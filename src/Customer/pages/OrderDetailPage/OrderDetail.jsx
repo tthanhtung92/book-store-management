@@ -36,6 +36,9 @@ const OrderDetail = () => {
         <>
             <Navbar />
             <div className="order-detail-container">
+                <div className="order-detail__title">
+                    <h1>Đơn hàng của bạn sẽ được giao đến sau vài ngày!</h1>
+                </div>
                 <div className="order-detail-wrap">
                     {orders.map((item, index) => (
                         <div className="order-detail-wrap__item" key={index}>

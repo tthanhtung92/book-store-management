@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Book from "../../components/Book/Book";
 import fieldApi from "../../api/fieldApi";
+import Bonus from "../../components/Bonus/Bonus";
 import FieldDetailSkeleton from "../../components/LoadingSkeleton/FieldDetailSkeleton";
 import "./FieldDetail.css";
 
@@ -13,6 +14,7 @@ const FieldDetail = () => {
     const { fieldId } = useParams();
     const [books, setBooks] = useState([]);
     const [field, setField] = useState([]);
+    const [twoFields, setTwoFields] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -36,6 +38,21 @@ const FieldDetail = () => {
         getBooks();
     }, [fieldId]);
     //-----------------------------
+
+    useEffect(() => {
+        const twoRowData = async () => {
+            try {
+                const res = await fieldApi.get2Row();
+                setTwoFields(res.data);
+                console.log(res.data);
+            } catch (err) {
+                console.log("Không lấy được dữ liệu 2 row từ API");
+            }
+            setLoading(false);
+        };
+        // gọi hàm
+        twoRowData();
+    }, []);
 
     return (
         <div className="main">
@@ -61,6 +78,12 @@ const FieldDetail = () => {
                     ))}
                 </div>
             </div>
+
+            <div className="also-like">
+                <h1 className="also-like-text">Có thể bạn cũng sẽ thích</h1>
+            </div>
+
+            <Bonus data2={twoFields} />
 
             {/* Footer */}
             <Footer />

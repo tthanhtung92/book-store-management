@@ -18,7 +18,7 @@
 }
 
 .profile__content p {
-    color: #573BAB;
+    color: var(--text-color);
     font-family: IBM Plex Sans, sans-serif;
     font-size: 2.2rem;
     line-height: 2.2rem;
@@ -60,8 +60,4 @@
     font-size: 2.4rem;
     font-weight: bold;
     color: var(--button-color);
-}
-
-.order-details__item-order-date-p {
-    color: #573bab;
 }

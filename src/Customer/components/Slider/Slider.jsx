@@ -1,10 +1,9 @@
 import { Component } from "react";
-import "./Slider.css";
+import { linkImg } from "./sliderData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { linkImg } from "./sliderData";
+import "./Slider.css";
 
 const settings = {
     dots: false,
