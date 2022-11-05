@@ -24,6 +24,11 @@ const bookApi = {
         const url = `Book/GetByName/${name}`;
         return axiosClient.get(url);
     },
+
+    async getBestSeller() {
+        const url = `Book/SixBookBestSeller`;
+        return axiosClient.get(url);
+    },
 };
 
 export default bookApi;

@@ -15,6 +15,11 @@ const fieldApi = {
         return res;
     },
 
+    async getById(id) {
+        const url = `Field/GetById/${id}`;
+        return axiosClient.get(url);
+    },
+
     async get8Row() {
         const url = `Field/GetEightRow`;
         return axiosClient.get(url);
@@ -22,11 +27,6 @@ const fieldApi = {
 
     async get2Row() {
         const url = `Field/GetTwoRow`;
-        return axiosClient.get(url);
-    },
-
-    async getById(id) {
-        const url = `Field/GetById/${id}`;
         return axiosClient.get(url);
     },
 };

@@ -41,7 +41,14 @@ export default function App() {
                             </Protected>
                         }
                     />
-                    <Route path="/orderDetail/:orderId" element={<OrderDetail />} />
+                    <Route
+                        path="/orderDetail/:orderId"
+                        element={
+                            <Protected>
+                                <OrderDetail />
+                            </Protected>
+                        }
+                    />
 
                     {/* For cart payment */}
                     <Route

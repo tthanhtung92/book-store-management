@@ -26,7 +26,9 @@ const Bonus = (props) => {
                             </div>
                             <div className="bonus-header__right">
                                 <Link to={`/field/${item?.fieldID}`}>
-                                    <button className="btn-primary-medium">Xem</button>
+                                    <button className="btn-primary-medium">
+                                        Xem
+                                    </button>
                                 </Link>
                             </div>
                         </div>
@@ -60,7 +62,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[0]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[0]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div>
@@ -92,7 +94,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[1]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[1]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div>
@@ -124,7 +126,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[2]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[2]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div>
@@ -156,7 +158,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[3]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[3]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div>
@@ -191,7 +193,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[4]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[4]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div>
@@ -223,7 +225,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[5]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[5]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div> */}
@@ -255,7 +257,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[6]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[6]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div> */}
@@ -287,7 +289,7 @@ const Bonus = (props) => {
                                             Tungdz
                                         </p>
                                         <p className="bonus-body__column-detail-price">
-                                            {formatCash(item?.books[7]?.price) + "VNĐ"}
+                                            {formatCash(item?.books[7]?.price) + " VNĐ"}
                                         </p>
                                     </div>
                                 </div> */}

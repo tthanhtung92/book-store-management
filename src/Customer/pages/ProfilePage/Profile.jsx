@@ -4,14 +4,11 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import orderApi from "../../api/orderApi";
-import fieldApi from "../../api/fieldApi";
-import Bonus from "../../components/Bonus/Bonus";
 import "./Profile.css";
 
 const Profile = () => {
     const { user } = UserAuth();
     const [orders, setOrders] = useState([]);
-    const [twoFields, setTwoFields] = useState([]);
 
     const formatCash = (n) => {
         return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -35,20 +32,6 @@ const Profile = () => {
         };
         // gọi hàm
         Data();
-    }, []);
-
-    useEffect(() => {
-        const twoRowData = async () => {
-            try {
-                const res = await fieldApi.get2Row();
-                setTwoFields(res.data);
-                console.log(res.data);
-            } catch (err) {
-                console.log("Không lấy được dữ liệu 2 row từ API");
-            }
-        };
-        // gọi hàm
-        twoRowData();
     }, []);
 
     //xu li lay orderDetail by OrderId
@@ -89,8 +72,6 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-
-            <Bonus data2={twoFields} />
 
             <Footer />
         </div>

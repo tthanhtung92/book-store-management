@@ -8,10 +8,13 @@ import Field from "../../components/Field/Field";
 import Bonus from "../../components/Bonus/Bonus";
 import HomeSkeleton from "../../components/LoadingSkeleton/HomeSkeleton";
 import "./Home.css";
+import bookApi from "../../api/bookApi";
+import BestSeller from "../../components/BestSeller/BestSeller";
 
 function Home() {
     const [fields, setFields] = useState([]);
     const [twoFields, setTwoFields] = useState([]);
+    const [bestSellers, setBestSellers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -52,6 +55,22 @@ function Home() {
         twoRowData();
     }, []);
 
+    useEffect(() => {
+        const bestSeller = async () => {
+            try {
+                const res = await bookApi.getBestSeller();
+                setBestSellers(res.data);
+                console.log(res.data);
+            } catch (err) {
+                setError(err);
+                console.log("Không lấy được dữ liệu best seller từ API");
+            }
+            setLoading(false);
+        };
+        // gọi hàm
+        bestSeller();
+    }, []);
+
     return (
         <>
             {error ? (
@@ -63,6 +82,8 @@ function Home() {
 
                     {/* Slider */}
                     <Sliders />
+
+                    <BestSeller data3={bestSellers} />
 
                     {loading && <HomeSkeleton fields={5} />}
 

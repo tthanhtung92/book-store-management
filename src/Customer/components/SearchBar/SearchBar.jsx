@@ -23,7 +23,7 @@ const SearchBarContainer = styled(motion.div)`
     left: 50%;
     background-color: #fff;
     border-radius: 99px;
-    box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transform: translate(-50%);
 `;
 

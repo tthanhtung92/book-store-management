@@ -21,7 +21,7 @@ const SignIn = () => {
 
     // Login with google
     const { googleSignIn, user, token, newUser } = UserAuth();
-    console.log(newUser)
+    console.log(newUser);
 
     const handleGoogleSignIn = async () => {
         try {
@@ -51,8 +51,8 @@ const SignIn = () => {
             navigate("/");
         }
 
-        if(newUser){
-            navigate("/verify")
+        if (newUser) {
+            navigate("/verify");
         }
     }, [user, newUser, token, jwt, accountId, navigate]);
 
