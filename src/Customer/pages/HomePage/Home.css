@@ -10,8 +10,7 @@
 
 .also-like-text {
     text-align: center;
-    font-family: GT Super Bold, serif;
-    color: #573BAB;
+    color: var(--primary-color);
     font-size: 4rem;
     margin: 0;
 }

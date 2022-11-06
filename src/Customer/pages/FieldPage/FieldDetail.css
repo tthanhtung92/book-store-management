@@ -12,8 +12,7 @@
 
 .fieldName-container h1 {
     display: block;
-    color: #5747a5;
-    font-family: GT Super Bold, serif;
+    color: var(--primary-color);
     font-size: 4rem;
     line-height: 4rem;
     font-weight: 700;

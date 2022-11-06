@@ -44,8 +44,8 @@
 
 /* Detail */
 .bookDetail__detail-title h1 {
-    font-family: GT Super Bold, serif;
     font-size: 3.4rem;
+    font-weight: 500;
     margin: 0 0 0.8rem 0;
     line-height: 1.25;
     letter-spacing: -1px;
@@ -100,7 +100,7 @@
 }
 
 .bookDetail__detail-description h1 {
-    font-family: GT Super Bold, serif;
+    font-weight: 500;
     font-size: 3rem;
     margin: 12px 0;
     line-height: 1.25;
@@ -108,7 +108,6 @@
 }
 
 .bookDetail__detail-description p {
-    font-family: GT Super Bold, serif;
     font-size: 2rem;
     letter-spacing: 1px;
     line-height: 1.4;
@@ -118,8 +117,8 @@
 }
 
 .bookDetail__detail-detail h1 {
-    font-family: GT Super Bold, serif;
     font-size: 3rem;
+    font-weight: 500;
     margin: 32px 0 12px;
     line-height: 1.25;
     letter-spacing: -1px;

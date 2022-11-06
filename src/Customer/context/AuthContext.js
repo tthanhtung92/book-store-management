@@ -23,7 +23,7 @@ export const AuthContextProvider = ({ children }) => {
         // Pass the UserCredential
         const { isNewUser } = getAdditionalUserInfo(result);
         setNewUser(isNewUser)
-        console.log(isNewUser);
+        // console.log(isNewUser);
     };
 
     const logOut = () => {

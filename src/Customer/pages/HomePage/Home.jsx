@@ -60,7 +60,7 @@ function Home() {
             try {
                 const res = await bookApi.getBestSeller();
                 setBestSellers(res.data);
-                console.log(res.data);
+                // console.log(res.data);
             } catch (err) {
                 setError(err);
                 console.log("Không lấy được dữ liệu best seller từ API");

@@ -32,7 +32,7 @@ function Field(props) {
                     <div className="content__header">
                         <div className="content__header-left">
                             <img
-                                src={require("../../assets/images/Social_media_Icon_alternative.webp")}
+                                src={require("../../assets/images/icons8-open-book.gif")}
                                 alt=""
                                 className="content__header-logo"
                             />

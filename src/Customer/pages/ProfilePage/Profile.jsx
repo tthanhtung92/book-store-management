@@ -42,7 +42,9 @@ const Profile = () => {
             <div className="profile__wrap">
                 <div className="profile__content">
                     <h1>Welcome</h1>
-                    <p>Email: {user?.email}</p>
+                    <p>
+                        Email: <span className="user__email">{user?.email}</span>
+                    </p>
                     <div className="profile__content-item">
                         <h1>Đơn hàng của bạn</h1>
                         {orders.map((item, index) => (
@@ -63,7 +65,7 @@ const Profile = () => {
 
                                     <div className="order-details__item-order-total-price">
                                         <p className="order-details__item-total-price-p">
-                                            Tổng số tiền: {formatCash(item?.totalAmount) + " VNĐ"}
+                                            Tổng số tiền: <span className="order-details__item-total-price-span">{formatCash(item?.totalAmount) + " VNĐ"}</span>
                                         </p>
                                     </div>
                                 </div>

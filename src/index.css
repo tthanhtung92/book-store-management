@@ -12,7 +12,10 @@ body::-webkit-scrollbar {
     --text-color: #333;
     --white-color: #fff;
     --black-color: #000;
-    --button-color: #de2454;
+    --primary-color: #006E7F;
+    --secondary-color: #F8CB2E;
+    --third-color: #EE5007;
+    --button-color: #B22727;
     --footer-color: #2b0f42;
 
     --navbar-height: 118px;
@@ -34,7 +37,7 @@ html {
 /* Button */
 
 .btn-primary {
-    width: 192px;
+    width: 146px;
     height: 38px;
     border-radius: 999px;
     background-color: var(--button-color);
@@ -49,7 +52,7 @@ html {
 }
 
 .btn-primary-medium {
-    width: 96px;
+    width: 73px;
     height: 38px;
     border-radius: 999px;
     background-color: var(--button-color);
@@ -65,7 +68,7 @@ html {
 
 .btn-primary:hover,
 .btn-primary-medium:hover {
-    background-color: #bf1f49;
+    background-color: var(--button-color);
     box-shadow: 1px 7px 13px 0px rgb(67 0 17 / 13%);
     transform: scale(1.02);
 }

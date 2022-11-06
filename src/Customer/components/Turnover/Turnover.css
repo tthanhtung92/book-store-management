@@ -16,7 +16,7 @@
 }
 
 .Turnover-detail__numOf {
-    color: #573ba3;
+    color: var(--third-color);
     font-size: 2rem;
     font-weight: 500;
     display: inline-block;

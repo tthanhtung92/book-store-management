@@ -8,8 +8,7 @@
 
 .best-seller__title {
     text-align: center;
-    font-family: GT Super Bold, serif;
-    color: #573bab;
+    color: var(--primary-color);
     font-size: 4rem;
     margin: 0 0 40px 0;
 }
@@ -55,10 +54,16 @@
     margin-left: 12px;
 }
 
-.best-seller__right-title h1 {
-    font-family: GT Super Bold, serif;
+.best-seller__right-title-h1 {
+    text-decoration: none;
+    color: var(--text-color);
     font-size: 2rem;
+    font-weight: 500;
     margin: 6px 0 12px;
+}
+
+.best-seller__left-img-link {
+    text-decoration: none;
 }
 
 .best-seller__right-author p {
@@ -71,7 +76,7 @@
 .best-seller__right-price p {
     font-weight: 500;
     font-size: 1.8rem;
-    color: var(--button-color);
+    color: var(--third-color);
     margin: 8px 0;
 }
 

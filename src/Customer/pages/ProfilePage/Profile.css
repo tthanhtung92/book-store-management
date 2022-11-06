@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     margin-top: calc(var(--navbar-height) + var(--turnover-height));
-    height: 100vh;
 }
 
 .profile__content {
@@ -14,14 +13,17 @@
 
 .profile__content h1 {
     font-size: 5rem;
-    font-family: GT Super Bold, serif;
+    font-weight: 500;
 }
 
 .profile__content p {
     color: var(--text-color);
-    font-family: IBM Plex Sans, sans-serif;
     font-size: 2.2rem;
     line-height: 2.2rem;
+}
+
+.user__email {
+    color: var(--primary-color);
 }
 
 .profile__content-item {
@@ -34,7 +36,7 @@
     line-height: 4rem;
     font-weight: 600;
     margin: 20px 0 38px;
-    color: var(--button-color);
+    color: var(--text-color);
 }
 
 .clickViewOrder {
@@ -60,4 +62,8 @@
     font-size: 2.4rem;
     font-weight: bold;
     color: var(--button-color);
+}
+
+.order-details__item-total-price-span {
+    color: var(--third-color);
 }

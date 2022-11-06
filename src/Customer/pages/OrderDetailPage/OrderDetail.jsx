@@ -53,12 +53,12 @@ const OrderDetail = () => {
                                         {item?.book?.bookName}
                                     </p>
                                     <p>Ngày xuất bản: {item?.book?.dateOfPublished.slice(0, 10)}</p>
-                                    <p>Giá tiền: {formatCash(item?.price) + " VNĐ"}</p>
-                                    <p>Số lượng: {item?.quantity}</p>
+                                    <p>Giá tiền: <span className="order-detail__price-each">{formatCash(item?.price) + " VNĐ"}</span></p>
+                                    <p>Số lượng: <span className="order-detail__price-each">{item?.quantity}</span></p>
                                 </div>
                             </div>
 
-                            <p>Tổng: {formatCash(item?.totalPrice) + " VNĐ"}</p>
+                            <p>Tổng: <span className="order-detail__price-each">{formatCash(item?.totalPrice) + " VNĐ"}</span></p>
                         </div>
                     ))}
                 </div>

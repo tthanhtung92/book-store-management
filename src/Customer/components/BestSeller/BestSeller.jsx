@@ -31,7 +31,12 @@ const BestSeller = (props) => {
                     </div>
                     <div className="best-seller__right">
                         <div className="best-seller__right-title">
-                            <h1>{item?.bookName}</h1>
+                            <Link
+                                to={`/bookDetail/${item?.bookID}`}
+                                className="best-seller__left-img-link"
+                            >
+                                <h1 className="best-seller__right-title-h1">{item?.bookName}</h1>
+                            </Link>
                         </div>
                         <div className="best-seller__right-author">
                             <p>Tungdz</p>

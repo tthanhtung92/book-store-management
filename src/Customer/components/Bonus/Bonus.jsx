@@ -18,7 +18,7 @@ const Bonus = (props) => {
                         <div className="bonus-header">
                             <div className="bonus-header__left">
                                 <img
-                                    src={require("../../assets/images/MC_FBProfilePic.jpg")}
+                                    src={require("../../assets/images/icons8-open-book.gif")}
                                     alt=""
                                     className="bonus-header__under-logo"
                                 />
