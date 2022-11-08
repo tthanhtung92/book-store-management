@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import BookDetail from "../../components/BookDetail/BookDetail";
 import bookApi from "../../api/bookApi";
+import BookDetail from "../../components/BookDetail/BookDetail";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
 function BookDetails() {
     const { bookId } = useParams();

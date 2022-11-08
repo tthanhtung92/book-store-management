@@ -123,6 +123,7 @@ const containerVariants = {
 // Book SHoww
 const BookShowContainer = styled.div`
     height: 100%;
+    max-height: 60px;
     display: flex;
     z-index: 2;
     border-bottom: 2px solid #d8d8d852;

@@ -39,7 +39,7 @@ const BestSeller = (props) => {
                             </Link>
                         </div>
                         <div className="best-seller__right-author">
-                            <p>Tungdz</p>
+                            <p>{item?.author?.authorName}</p>
                         </div>
                         <div className="best-seller__right-price">
                             <p>{formatCash(item?.price) + " VNĐ"}</p>

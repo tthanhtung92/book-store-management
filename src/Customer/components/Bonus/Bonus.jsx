@@ -26,9 +26,7 @@ const Bonus = (props) => {
                             </div>
                             <div className="bonus-header__right">
                                 <Link to={`/field/${item?.fieldID}`}>
-                                    <button className="btn-primary-medium">
-                                        Xem
-                                    </button>
+                                    <button className="btn-primary-medium">Xem</button>
                                 </Link>
                             </div>
                         </div>
@@ -59,7 +57,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[0]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[0]?.price) + " VNĐ"}
@@ -91,7 +89,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[1]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[1]?.price) + " VNĐ"}
@@ -123,7 +121,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[2]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[2]?.price) + " VNĐ"}
@@ -155,7 +153,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[3]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[3]?.price) + " VNĐ"}
@@ -190,7 +188,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[4]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[4]?.price) + " VNĐ"}
@@ -222,7 +220,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[5]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[5]?.price) + " VNĐ"}
@@ -254,7 +252,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[6]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[6]?.price) + " VNĐ"}
@@ -286,7 +284,7 @@ const Bonus = (props) => {
                                             </h3>
                                         </Link>
                                         <p className="bonus-body__column-detail-authorName">
-                                            Tungdz
+                                            {item?.books[7]?.author?.authorName}
                                         </p>
                                         <p className="bonus-body__column-detail-price">
                                             {formatCash(item?.books[7]?.price) + " VNĐ"}

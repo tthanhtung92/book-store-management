@@ -1,9 +1,9 @@
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import { useParams } from "react-router-dom";
-import "./OrderDetail.css";
-import orderApi from "../../api/orderApi";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import orderApi from "../../api/orderApi";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import "./OrderDetail.css";
 
 const OrderDetail = () => {
     const { orderId } = useParams();
@@ -53,12 +53,27 @@ const OrderDetail = () => {
                                         {item?.book?.bookName}
                                     </p>
                                     <p>Ngày xuất bản: {item?.book?.dateOfPublished.slice(0, 10)}</p>
-                                    <p>Giá tiền: <span className="order-detail__price-each">{formatCash(item?.price) + " VNĐ"}</span></p>
-                                    <p>Số lượng: <span className="order-detail__price-each">{item?.quantity}</span></p>
+                                    <p>
+                                        Giá tiền:{" "}
+                                        <span className="order-detail__price-each">
+                                            {formatCash(item?.price) + " VNĐ"}
+                                        </span>
+                                    </p>
+                                    <p>
+                                        Số lượng:{" "}
+                                        <span className="order-detail__price-each">
+                                            {item?.quantity}
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
 
-                            <p>Tổng: <span className="order-detail__price-each">{formatCash(item?.totalPrice) + " VNĐ"}</span></p>
+                            <p>
+                                Tổng:{" "}
+                                <span className="order-detail__price-each">
+                                    {formatCash(item?.totalPrice) + " VNĐ"}
+                                </span>
+                            </p>
                         </div>
                     ))}
                 </div>

@@ -1,6 +1,7 @@
 .profile__wrap {
     display: flex;
     justify-content: center;
+    min-height: 100vh;
     margin-top: calc(var(--navbar-height) + var(--turnover-height));
 }
 

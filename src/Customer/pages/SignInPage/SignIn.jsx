@@ -37,7 +37,7 @@ const SignIn = () => {
             const send = async () => {
                 try {
                     const res = await authApi.verifyAccessToken(token);
-                    console.log(res.data.jwt);
+                    // console.log(res.data.jwt);
                     setJwt(res?.data?.jwt);
                     localStorage.setItem("jwt", JSON.stringify(res?.data?.jwt));
                     setAccountId(res?.data?.accountId);

@@ -1,11 +1,10 @@
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import Book from "../../components/Book/Book";
 import fieldApi from "../../api/fieldApi";
+import Book from "../../components/Book/Book";
+import Footer from "../../components/Footer/Footer";
 import FieldDetailSkeleton from "../../components/LoadingSkeleton/FieldDetailSkeleton";
+import Navbar from "../../components/Navbar/Navbar";
 import "./FieldDetail.css";
 
 const FieldDetail = () => {

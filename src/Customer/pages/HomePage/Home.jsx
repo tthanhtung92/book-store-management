@@ -1,15 +1,15 @@
 import { React, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import fieldApi from "../../api/fieldApi";
-import Sliders from "../../components/Slider/Slider";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import Field from "../../components/Field/Field";
-import Bonus from "../../components/Bonus/Bonus";
-import HomeSkeleton from "../../components/LoadingSkeleton/HomeSkeleton";
-import "./Home.css";
 import bookApi from "../../api/bookApi";
+import fieldApi from "../../api/fieldApi";
 import BestSeller from "../../components/BestSeller/BestSeller";
+import Bonus from "../../components/Bonus/Bonus";
+import Field from "../../components/Field/Field";
+import Footer from "../../components/Footer/Footer";
+import HomeSkeleton from "../../components/LoadingSkeleton/HomeSkeleton";
+import Navbar from "../../components/Navbar/Navbar";
+import Sliders from "../../components/Slider/Slider";
+import "./Home.css";
 
 function Home() {
     const [fields, setFields] = useState([]);

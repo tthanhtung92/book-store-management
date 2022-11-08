@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
-import { RiSubtractFill, RiAddCircleLine } from "react-icons/ri";
+import { RiAddCircleLine, RiSubtractFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
-import { UserAuth } from "../../context/AuthContext";
-import React, { useEffect } from "react";
-import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import { UserAuth } from "../../context/AuthContext";
 import "./Cart.css";
 
 const Cart = () => {
