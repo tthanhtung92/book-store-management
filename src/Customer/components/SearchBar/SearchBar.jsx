@@ -1,15 +1,12 @@
-import { IoClose, IoSearch } from "react-icons/io5";
-import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import { useClickOutside } from "react-click-outside-hook";
-import { useEffect } from "react";
-import { useRef } from "react";
-import { useDebounce } from "../../hooks/debounceHook";
+import { IoClose, IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import MoonLoader from "react-spinners/MoonLoader";
-import React from "react";
 import styled from "styled-components";
 import bookApi from "../../api/bookApi";
+import { useDebounce } from "../../hooks/debounceHook";
 import "./SearchBar.css";
 
 const SearchBarContainer = styled(motion.div)`
@@ -80,7 +77,7 @@ const CloseIcon = styled(motion.span)`
 const LineSeperator = styled.span`
     display: flex;
     min-width: 100%;
-    min-height: 2px;
+    min-height: 1px;
     background-color: #d8d8d878;
 `;
 
@@ -91,6 +88,9 @@ const SearchContent = styled.div`
     flex-direction: column;
     padding: 1em;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 const LoadingWrapper = styled.div`
@@ -111,7 +111,7 @@ const WarningMessage = styled.span`
 
 const containerVariants = {
     expanded: {
-        borderRadius: "20px",
+        borderRadius: "20px 20px 8px 8px",
         height: "30em",
     },
     collapsed: {
@@ -123,11 +123,11 @@ const containerVariants = {
 // Book SHoww
 const BookShowContainer = styled.div`
     height: 100%;
-    max-height: 60px;
+    max-height: 650px;
     display: flex;
     z-index: 2;
-    border-bottom: 2px solid #d8d8d852;
-    padding: 6px 8px;
+    border-bottom: 1px solid #d8d8d852;
+    padding: 6px 0;
     align-items: center;
 `;
 
@@ -136,7 +136,7 @@ const Thumbnail = styled.div`
     height: 100%;
     display: flex;
     justify-content: center;
-    flex: 0.4;
+    flex: 0.2;
     img {
         width: auto;
         height: 100%;
@@ -156,12 +156,13 @@ const Price = styled.span`
     color: #a1a1a1;
     font-size: 16px;
     display: flex;
+    justify-content: center;
     flex: 0.4;
 `;
 
 const containerTransition = { type: "spring", damping: 22, stiffness: 150 };
 
-export function SearchBar(props) {
+export function SearchBar() {
     const inputRef = useRef();
     const [isExpanded, setExpanded] = useState(false);
     const [parentRef, isClickedOutside] = useClickOutside();
@@ -205,6 +206,7 @@ export function SearchBar(props) {
     //call api search
     const searchBookShow = async () => {
         if (!searchQuery || searchQuery.trim() === "") return;
+        // console.log(searchQuery)
 
         setLoading(true);
         setNoBookShows(false);
@@ -263,11 +265,11 @@ export function SearchBar(props) {
             {isExpanded && <LineSeperator />}
             {isExpanded && (
                 <SearchContent>
-                    {isLoading && (
+                    {isLoading ? (
                         <LoadingWrapper>
                             <MoonLoader loading color="#000" size={20} />
                         </LoadingWrapper>
-                    )}
+                    ) : (<></>)}
                     {!isLoading && isEmpty && !noBookShows && (
                         <LoadingWrapper>
                             <WarningMessage>Gõ vào để tìm sách</WarningMessage>

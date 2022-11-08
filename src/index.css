@@ -1,3 +1,5 @@
+@import url("https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css");
+
 body {
     margin: 0;
     font-family: "Roboto", sans-serif;
@@ -12,10 +14,10 @@ body::-webkit-scrollbar {
     --text-color: #333;
     --white-color: #fff;
     --black-color: #000;
-    --primary-color: #006E7F;
-    --secondary-color: #F8CB2E;
-    --third-color: #EE5007;
-    --button-color: #B22727;
+    --primary-color: #006e7f;
+    --secondary-color: #f8cb2e;
+    --third-color: #ee5007;
+    --button-color: #b22727;
     --footer-color: #2b0f42;
 
     --navbar-height: 118px;
@@ -37,39 +39,41 @@ html {
 /* Button */
 
 .btn-primary {
+    position: relative;
+    display: inline-block;
     width: 146px;
     height: 38px;
-    border-radius: 999px;
+    padding: 11px 10px 10px;
     background-color: var(--button-color);
-    border: none;
-    font-family: IBM Plex Sans, sans-serif;
+    color: #fff;
     font-weight: 600;
     font-size: 1.5rem;
-    color: var(--white-color);
-    cursor: pointer;
-    margin-right: 4px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-primary-medium {
-    width: 73px;
-    height: 38px;
-    border-radius: 999px;
-    background-color: var(--button-color);
+    letter-spacing: 0.1px;
     border: none;
-    font-family: IBM Plex Sans, sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: var(--white-color);
+    border-radius: 99px;
     cursor: pointer;
-    margin-right: 4px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.3s;
 }
 
-.btn-primary:hover,
-.btn-primary-medium:hover {
+.btn-primary i {
+    position: absolute;
+    top: 50%;
+    transform: translate(-10px, -50%);
+    display: inline-block;
+    font-size: 20px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.btn-primary:hover i {
+    transform: translate(5px, -50%);
+    opacity: 1;
+}
+
+.btn-primary:hover {
     background-color: var(--button-color);
     box-shadow: 1px 7px 13px 0px rgb(67 0 17 / 13%);
+    padding-right: 30px;
     transform: scale(1.02);
 }
 

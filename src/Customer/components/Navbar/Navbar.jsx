@@ -30,7 +30,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
 }));
 
-function Navbar(props) {
+function Navbar() {
     //props
     const { isEmpty, totalItems } = useCart();
     // handle logout
@@ -154,7 +154,7 @@ function Navbar(props) {
                                     transformOrigin={{ horizontal: "right", vertical: "top" }}
                                     anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
                                 >
-                                    <Link to="/profile" className="navbar__right-menu-item">
+                                    <a href="/profile" className="navbar__right-menu-item">
                                         <MenuItem
                                             sx={{
                                                 display: "flex",
@@ -170,7 +170,7 @@ function Navbar(props) {
                                             />{" "}
                                             Hồ sơ
                                         </MenuItem>
-                                    </Link>
+                                    </a>
                                     <Divider />
 
                                     <MenuItem

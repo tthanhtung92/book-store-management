@@ -22,11 +22,8 @@ const Bonus = (props) => {
                                     alt=""
                                     className="bonus-header__under-logo"
                                 />
-                                <h1 className="bonus-header__fieldName">{item?.fieldName}</h1>
-                            </div>
-                            <div className="bonus-header__right">
-                                <Link to={`/field/${item?.fieldID}`}>
-                                    <button className="btn-primary-medium">Xem</button>
+                                <Link className="bonus-header__fieldName-link" to={`/field/${item?.fieldID}`}>
+                                    <h1 className="bonus-header__fieldName">{item?.fieldName}</h1>
                                 </Link>
                             </div>
                         </div>

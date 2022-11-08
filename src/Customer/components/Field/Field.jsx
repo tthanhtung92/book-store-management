@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import ReactPaginate from "react-paginate";
 import "react-loading-skeleton/dist/skeleton.css";
+import ReactPaginate from "react-paginate";
+import { Link } from "react-router-dom";
 import "./Field.css";
 
 function Field(props) {
@@ -39,7 +39,10 @@ function Field(props) {
                             <h1 className="content__header-name">{item?.fieldName}</h1>
                         </div>
                         <Link to={`/field/${item?.fieldID}`}>
-                            <button className="btn-primary">XEM TẤT CẢ</button>
+                            <button className="btn-primary">
+                                XEM TẤT CẢ
+                                <i class="bx bx-right-arrow-alt"></i>
+                            </button>
                         </Link>
                     </div>
 

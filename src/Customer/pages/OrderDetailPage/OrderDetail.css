@@ -43,6 +43,7 @@
 
 .order-detail-wrap__item-details {
     display: flex;
+    flex: 0.8;
 }
 
 .order-detail-wrap__item-img {
@@ -64,6 +65,7 @@
 
 .order-detail-wrap__item-detail-header {
     font-weight: 500;
+    line-height: 3rem;
 }
 
 .order-detail__price-each {

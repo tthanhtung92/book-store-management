@@ -11,7 +11,7 @@ const BestSeller = (props) => {
 
     return (
         <div className="best-seller-container">
-            <h1 className="best-seller__title">Bán chạy nhất tại Bookly!</h1>
+            <h1 className="best-seller__title">Bán chạy nhất</h1>
             {data3?.map((item, index) => (
                 <div className="best-seller-wrap" key={index}>
                     <div className="best-seller__left">

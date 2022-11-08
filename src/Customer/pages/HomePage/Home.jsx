@@ -83,12 +83,13 @@ function Home() {
                     {/* Slider */}
                     <Sliders />
 
+                    <Field data={fields} />
+                    
                     <BestSeller data3={bestSellers} />
 
                     {loading && <HomeSkeleton fields={5} />}
 
                     {/* Content */}
-                    <Field data={fields} />
 
                     <div className="also-like">
                         <h1 className="also-like-text">Có thể bạn cũng sẽ thích</h1>

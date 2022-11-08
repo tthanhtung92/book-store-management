@@ -1,6 +1,6 @@
 .formMain {
     /* background: #f6f5f7; */
-    background-image: linear-gradient(57deg, #cf6883, #66ce91);
+    background-image: linear-gradient(57deg, var(--primary-color), var(--secondary-color));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,11 +10,17 @@
     margin: 0;
 }
 
+.Signup-label {
+    margin-bottom: 40px;
+}
+
+.Signin-label {
+    margin-bottom: 10px;
+}
+
 .formMain h1 {
-    /* font-family: monospace; */
     font-weight: bold;
     font-size: 4.2rem;
-    margin-bottom: 10px;
 }
 
 .formMain h2 {
@@ -46,8 +52,8 @@
 
 .formMain button {
     border-radius: 20px;
-    border: 1px solid #12e86b;
-    background-color: #12e86b;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;

@@ -34,6 +34,9 @@ export default class Footer extends Component {
                         </a>
                     </div>
                 </div>
+                <div className="footer__wrap-down">
+                    <h1>@Group 1 SWP391</h1>
+                </div>
             </footer>
         );
     }

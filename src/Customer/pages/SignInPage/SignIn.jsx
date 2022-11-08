@@ -61,7 +61,7 @@ const SignIn = () => {
             <div className={"container " + isActive} id="container">
                 <div className="form-container sign-up-container">
                     <form action="/#">
-                        <h1>Đăng ký</h1>
+                        <h1 className="Signup-label">Đăng ký</h1>
                         <input type="text" placeholder="Tên đầy đủ" />
                         <input type="email" placeholder="Email" />
                         <input type="tel" placeholder="Số điện thoại" />
@@ -75,7 +75,7 @@ const SignIn = () => {
                 </div>
                 <div className="form-container sign-in-container">
                     <form action="/#">
-                        <h1>Đăng nhập</h1>
+                        <h1 className="Signin-label">Đăng nhập</h1>
                         <div className="social-container">
                             <FcGoogle
                                 onClick={() => {

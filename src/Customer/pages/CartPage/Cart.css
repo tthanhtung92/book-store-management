@@ -9,8 +9,9 @@
 }
 
 .cart-title {
-    font-size: 4.8rem;
-    color: #27985a;
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--primary-color);
 }
 
 .cart-table {
@@ -24,7 +25,7 @@
 }
 
 .cart-table thead tr {
-    background-color: #27985a;
+    background-color: var(--primary-color);
     color: #ffffff;
     text-align: left;
 }
@@ -59,7 +60,7 @@
 }
 
 .cart-table tbody tr:last-of-type {
-    border-bottom: 2px solid #27985a;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .cart-table__book-img-container {
@@ -139,7 +140,7 @@
 }
 
 .add-btn {
-    background-color: #27985a;
+    background-color: var(--primary-color);
 }
 
 .remove-btn {
@@ -210,7 +211,7 @@
     text-align: center;
     padding: 0;
     color: var(--white-color);
-    background-color: #27985a;
+    background-color: var(--primary-color);
     border-radius: 6px;
     font-size: 2rem;
     line-height: 2rem;
