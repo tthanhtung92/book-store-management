@@ -20,7 +20,7 @@ const SearchBarContainer = styled(motion.div)`
     left: 50%;
     background-color: #fff;
     border-radius: 99px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transform: translate(-50%);
 `;
 
@@ -269,7 +269,9 @@ export function SearchBar() {
                         <LoadingWrapper>
                             <MoonLoader loading color="#000" size={20} />
                         </LoadingWrapper>
-                    ) : (<></>)}
+                    ) : (
+                        <></>
+                    )}
                     {!isLoading && isEmpty && !noBookShows && (
                         <LoadingWrapper>
                             <WarningMessage>Gõ vào để tìm sách</WarningMessage>

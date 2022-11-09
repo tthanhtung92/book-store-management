@@ -77,7 +77,7 @@ function BookDetail(props) {
 
                         {/* action button */}
                         <button
-                            className="btn-primary mt-20"
+                            className="btn-secondary mt-20"
                             onClick={() => {
                                 addToCart();
                                 addSuccess();

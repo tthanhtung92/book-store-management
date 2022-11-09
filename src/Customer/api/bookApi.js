@@ -29,6 +29,16 @@ const bookApi = {
         const url = `Book/SixBookBestSeller`;
         return axiosClient.get(url);
     },
+
+    async getTotalOfBook() {
+        const url = `Book/NumberOfSold`;
+        return axiosClient.get(url);
+    },
+
+    async getTotalMoney() {
+        const url = `Book/NumberOfMoney`;
+        return axiosClient.get(url);
+    },
 };
 
 export default bookApi;

@@ -67,7 +67,7 @@ function Book(props) {
                 </div>
 
                 <button
-                    className="btn-primary"
+                    className="btn-secondary"
                     onClick={() => {
                         addToCart();
                         addSuccess();

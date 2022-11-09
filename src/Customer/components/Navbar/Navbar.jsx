@@ -1,20 +1,19 @@
-import { Link } from "react-router-dom";
-import { UserAuth } from "../../context/AuthContext";
-import { FiShoppingCart } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
-import { useCart } from "react-use-cart";
-import React, { useEffect, useState } from "react";
-import fieldApi from "../../api/fieldApi";
+import Logout from "@mui/icons-material/Logout";
 import Avatar from "@mui/material/Avatar";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import Badge from "@mui/material/Badge";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import Logout from "@mui/icons-material/Logout";
-import Badge from "@mui/material/Badge";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { styled } from "@mui/material/styles";
+import Tooltip from "@mui/material/Tooltip";
+import React, { useEffect, useState } from "react";
+import { FiShoppingCart } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "react-use-cart";
+import fieldApi from "../../api/fieldApi";
+import { UserAuth } from "../../context/AuthContext";
 import { SearchBar } from "../SearchBar/SearchBar";
 import Turnover from "../Turnover/Turnover";
 import "./Navbar.css";
@@ -91,13 +90,13 @@ function Navbar() {
                     <div className="navbar__middle">
                         <div className="navbar__middle-suggest">
                             {suggests.map((item, index) => (
-                                <Link
-                                    to={`/field/${item?.fieldID}`}
+                                <a
+                                    href={`/field/${item?.fieldID}`}
                                     className="navbar__middle-suggest-item"
                                     key={index}
                                 >
                                     <p>{item.fieldName}</p>
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     </div>

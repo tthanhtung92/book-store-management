@@ -38,12 +38,12 @@ function Field(props) {
                             />
                             <h1 className="content__header-name">{item?.fieldName}</h1>
                         </div>
-                        <Link to={`/field/${item?.fieldID}`}>
+                        <a href={`/field/${item?.fieldID}`}>
                             <button className="btn-primary">
                                 XEM TẤT CẢ
-                                <i class="bx bx-right-arrow-alt"></i>
+                                <i className="bx bx-right-arrow-alt"></i>
                             </button>
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="content__body">
