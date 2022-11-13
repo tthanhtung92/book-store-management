@@ -200,9 +200,9 @@ function Navbar() {
                                 </Menu>
                             </React.Fragment>
                         ) : (
-                            <Link to="/signIn" className="navbar__right-login-text">
+                            <a href="/signIn" className="navbar__right-login-text">
                                 Đăng nhập
-                            </Link>
+                            </a>
                         )}
                         {!isEmpty && (
                             <StyledBadge badgeContent={totalItems} color="error">

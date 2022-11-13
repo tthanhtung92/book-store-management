@@ -19,7 +19,6 @@ function BookDetails() {
         const getBooks = async () => {
             try {
                 const res = await bookApi.getById(bookId);
-
                 setBooks(res.data);
                 // console.log(res.data);
             } catch (error) {

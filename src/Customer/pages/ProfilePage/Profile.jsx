@@ -1,9 +1,9 @@
-import { React, useState, useEffect } from "react";
-import { UserAuth } from "../../context/AuthContext";
+import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import orderApi from "../../api/orderApi";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import { UserAuth } from "../../context/AuthContext";
 import "./Profile.css";
 
 const Profile = () => {
@@ -34,8 +34,6 @@ const Profile = () => {
         Data();
     }, []);
 
-    //xu li lay orderDetail by OrderId
-
     return (
         <div className="profile">
             <Navbar />
@@ -65,7 +63,10 @@ const Profile = () => {
 
                                     <div className="order-details__item-order-total-price">
                                         <p className="order-details__item-total-price-p">
-                                            Tổng số tiền: <span className="order-details__item-total-price-span">{formatCash(item?.totalAmount) + " VNĐ"}</span>
+                                            Tổng số tiền:{" "}
+                                            <span className="order-details__item-total-price-span">
+                                                {formatCash(item?.totalAmount) + " VNĐ"}
+                                            </span>
                                         </p>
                                     </div>
                                 </div>

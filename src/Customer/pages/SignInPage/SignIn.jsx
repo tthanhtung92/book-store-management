@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
-import "./SignIn.css";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import authApi from "../../api/authApi";
+import { UserAuth } from "../../context/AuthContext";
+import "./SignIn.css";
 
 const SignIn = () => {
     const [isActive, setPanelActive] = useState("");
-    const [jwt, setJwt] = useState("");
-    const [accountId, setAccountId] = useState("");
     const navigate = useNavigate();
 
     const handleClickSignUp = () => {
@@ -20,41 +17,17 @@ const SignIn = () => {
     };
 
     // Login with google
-    const { googleSignIn, user, token, newUser } = UserAuth();
+    const { googleSignIn } = UserAuth();
     // console.log(newUser);
 
     const handleGoogleSignIn = async () => {
         try {
             await googleSignIn();
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
     };
-
-    useEffect(() => {
-        if (user != null) {
-            //send access token
-            const send = async () => {
-                try {
-                    const res = await authApi.verifyAccessToken(token);
-                    // console.log(res.data.jwt);
-                    setJwt(res?.data?.jwt);
-                    localStorage.setItem("jwt", JSON.stringify(res?.data?.jwt));
-                    setAccountId(res?.data?.accountId);
-                    localStorage.setItem("accountId", JSON.stringify(res?.data?.accountId));
-                } catch (error) {
-                    console.log(error);
-                }
-            };
-
-            send();
-            navigate("/");
-        }
-
-        if (newUser) {
-            navigate("/verify");
-        }
-    }, [user, newUser, token, jwt, accountId, navigate]);
 
     return (
         <div className="formMain">

@@ -3,6 +3,8 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 import { RiAddCircleLine, RiSubtractFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useCart } from "react-use-cart";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -11,6 +13,7 @@ import "./Cart.css";
 
 const Cart = () => {
     const { user } = UserAuth();
+    const checkUserVerify = JSON.parse(localStorage.getItem("jwt"));
     const { isEmpty, items, cartTotal, updateItemQuantity, removeItem, emptyCart } = useCart();
 
     useEffect(() => {
@@ -39,6 +42,18 @@ const Cart = () => {
                 if (response.url) {
                     window.location.assign(response.url);
                 }
+            })
+            .catch((err) => {
+                toast.warn("Server Stripe chưa được khởi động!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "light",
+                });
             });
     };
 
@@ -146,20 +161,38 @@ const Cart = () => {
                         </h1>
 
                         {/* Kiểm tra user có đăng nhập hay chưa */}
-                        {user ? (
-                            <button
-                                className="pay-btn"
-                                onClick={() => {
+                        <button
+                            className="pay-btn"
+                            onClick={() => {
+                                if (!user) {
+                                    toast.warn("Vui lòng đăng nhập trước khi thanh toán!", {
+                                        position: "top-right",
+                                        autoClose: 3000,
+                                        hideProgressBar: false,
+                                        closeOnClick: false,
+                                        pauseOnHover: false,
+                                        draggable: false,
+                                        progress: undefined,
+                                        theme: "light",
+                                    });
+                                } else if (checkUserVerify === null) {
+                                    toast.warn("Vui lòng xác thực tài khoản trước khi thanh toán!", {
+                                        position: "top-right",
+                                        autoClose: 3000,
+                                        hideProgressBar: false,
+                                        closeOnClick: false,
+                                        pauseOnHover: false,
+                                        draggable: false,
+                                        progress: undefined,
+                                        theme: "light",
+                                    });
+                                } else {
                                     checkout();
-                                }}
-                            >
-                                Thanh toán
-                            </button>
-                        ) : (
-                            <Link to="/signIn">
-                                <button className="pay-btn">Đăng nhập</button>
-                            </Link>
-                        )}
+                                }
+                            }}
+                        >
+                            Thanh toán
+                        </button>
 
                         <button className="clear-btn" onClick={() => emptyCart()}>
                             Clear giỏ hàng
@@ -168,6 +201,18 @@ const Cart = () => {
                 )}
             </div>
             <Footer />
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover={false}
+                theme="light"
+            />
         </>
     );
 };

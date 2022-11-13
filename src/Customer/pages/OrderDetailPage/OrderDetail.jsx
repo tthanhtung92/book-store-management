@@ -23,6 +23,7 @@ const OrderDetail = () => {
             try {
                 const res = await orderApi.getOrderDetailByOrderId(orderId);
                 setOrders(res.data[0].orderDetails);
+                // console.log(res.data);
                 // console.log(res.data[0].orderDetails);
             } catch (err) {
                 console.log("Không lấy được dữ liệu từ API");

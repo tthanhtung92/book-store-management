@@ -1,22 +1,21 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./Customer/context/AuthContext";
-import FieldDetail from "./Customer/pages/FieldPage/FieldDetail";
 import BookDetail from "./Customer/pages/BookDetailPage/BookDetails";
-import Home from "./Customer/pages/HomePage/Home";
-import SignIn from "./Customer/pages/SignInPage/SignIn";
-import Profile from "./Customer/pages/ProfilePage/Profile";
-import OrderDetail from "./Customer/pages/OrderDetailPage/OrderDetail";
 import Cart from "./Customer/pages/CartPage/Cart";
-import Protected from "./Customer/components/Protected/Protected";
+import FieldDetail from "./Customer/pages/FieldPage/FieldDetail";
+import Home from "./Customer/pages/HomePage/Home";
+import OrderDetail from "./Customer/pages/OrderDetailPage/OrderDetail";
+import Profile from "./Customer/pages/ProfilePage/Profile";
+import SignIn from "./Customer/pages/SignInPage/SignIn";
 
 //special
 import Error from "./Customer/pages/500/Error";
 import VerifyAccount from "./Customer/pages/VerifyAccountPage/VerifyAccount";
 
 //For cart
-import Success from "./Customer/pages/SuccessPage/Success";
 import Cancel from "./Customer/pages/CancelPage/Cancel";
+import Success from "./Customer/pages/SuccessPage/Success";
 
 export default function App() {
     useEffect(() => {
@@ -33,40 +32,12 @@ export default function App() {
                     <Route path="/field/:fieldId" element={<FieldDetail />} />
                     <Route path="/bookDetail/:bookId" element={<BookDetail />} />
                     <Route path="/cart" element={<Cart />} />
-                    <Route
-                        path="/profile"
-                        element={
-                            <Protected>
-                                <Profile />
-                            </Protected>
-                        }
-                    />
-                    <Route
-                        path="/orderDetail/:orderId"
-                        element={
-                            <Protected>
-                                <OrderDetail />
-                            </Protected>
-                        }
-                    />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/orderDetail/:orderId" element={<OrderDetail />} />
 
                     {/* For cart payment */}
-                    <Route
-                        path="success"
-                        element={
-                            <Protected>
-                                <Success />
-                            </Protected>
-                        }
-                    />
-                    <Route
-                        path="cancel"
-                        element={
-                            <Protected>
-                                <Cancel />
-                            </Protected>
-                        }
-                    />
+                    <Route path="success" element={<Success />} />
+                    <Route path="cancel" element={<Cancel />} />
 
                     {/* Special */}
                     <Route path="/500" element={<Error />} />
