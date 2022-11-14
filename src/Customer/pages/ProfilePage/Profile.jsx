@@ -1,5 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import orderApi from "../../api/orderApi";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -27,7 +29,16 @@ const Profile = () => {
                 // console.log(res.data);
                 setOrders(res.data);
             } catch (err) {
-                console.log("Không lấy được dữ liệu từ API");
+                toast.error("Không fetch được dữ liệu!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
         };
         // gọi hàm
@@ -77,6 +88,18 @@ const Profile = () => {
             </div>
 
             <Footer />
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover={false}
+                theme="light"
+            />
         </div>
     );
 };

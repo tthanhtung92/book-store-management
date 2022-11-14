@@ -126,6 +126,7 @@ html {
 
 .pagination .active {
     background-color: var(--button-color);
+    color: var(--white-color);
 }
 
 /* THE LOADING EFFECT */
@@ -142,4 +143,36 @@ html {
     to {
         background-position: right -40px top 0;
     }
+}
+
+/* --------- Toastify ----------- */
+/* Toastify */
+.Toastify__close-button {
+    display: none;
+}
+
+.Toastify__toast {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+/* -------- Responsive ----------- */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

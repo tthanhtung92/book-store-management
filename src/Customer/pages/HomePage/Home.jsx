@@ -27,10 +27,16 @@ function Home() {
         const Data = async () => {
             try {
                 const res = await fieldApi.getAllField();
+                const res1 = await fieldApi.get2Row();
+                const res2 = await bookApi.getBestSeller();
+
                 setFields(res.data);
+                setTwoFields(res1.data);
+                setBestSellers(res2.data);
+
                 // console.log(res.data);
             } catch (err) {
-                toast("Không lấy được dữ liệu field!", {
+                toast.error("Không fetch được dữ liệu!", {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -45,54 +51,6 @@ function Home() {
         };
         // gọi hàm
         Data();
-    }, []);
-
-    useEffect(() => {
-        const twoRowData = async () => {
-            try {
-                const res = await fieldApi.get2Row();
-                setTwoFields(res.data);
-                // console.log(res.data);
-            } catch (err) {
-                toast("Không lấy được dữ liệu 2 row!", {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: false,
-                    draggable: false,
-                    progress: undefined,
-                    theme: "light",
-                });
-            }
-            setLoading(false);
-        };
-        // gọi hàm
-        twoRowData();
-    }, []);
-
-    useEffect(() => {
-        const bestSeller = async () => {
-            try {
-                const res = await bookApi.getBestSeller();
-                setBestSellers(res.data);
-                // console.log(res.data);
-            } catch (err) {
-                toast("Không lấy được dữ liệu best seller!", {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: false,
-                    draggable: false,
-                    progress: undefined,
-                    theme: "light",
-                });
-            }
-            setLoading(false);
-        };
-        // gọi hàm
-        bestSeller();
     }, []);
 
     return (

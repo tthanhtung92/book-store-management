@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import fieldApi from "../../api/fieldApi";
 import Book from "../../components/Book/Book";
 import Footer from "../../components/Footer/Footer";
@@ -37,7 +39,16 @@ const FieldDetail = () => {
                 setField(res.data);
                 // console.log(res.data[0].books);
             } catch (error) {
-                console.log("Không lấy được dữ liệu từ API");
+                toast.error("Không fetch được dữ liệu!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
             setLoading(false);
         };
@@ -93,6 +104,18 @@ const FieldDetail = () => {
 
             {/* Footer */}
             <Footer />
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover={false}
+                theme="light"
+            />
         </div>
     );
 };

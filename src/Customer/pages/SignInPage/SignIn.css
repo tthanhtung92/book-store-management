@@ -299,12 +299,3 @@ button.ghost:hover {
         transform: translate(0px, 0px) rotateZ(0.001deg);
     }
 }
-
-/* Toastify */
-.Toastify__close-button {
-    display: none;
-}
-
-.Toastify__toast {
-    font-size: 1.4rem;
-}

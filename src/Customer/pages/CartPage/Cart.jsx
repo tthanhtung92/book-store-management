@@ -15,6 +15,7 @@ const Cart = () => {
     const { user } = UserAuth();
     const checkUserVerify = JSON.parse(localStorage.getItem("jwt"));
     const { isEmpty, items, cartTotal, updateItemQuantity, removeItem, emptyCart } = useCart();
+    console.log(items);
 
     useEffect(() => {
         // 👇️ scroll to top on page load
@@ -176,16 +177,19 @@ const Cart = () => {
                                         theme: "light",
                                     });
                                 } else if (checkUserVerify === null) {
-                                    toast.warn("Vui lòng xác thực tài khoản trước khi thanh toán!", {
-                                        position: "top-right",
-                                        autoClose: 3000,
-                                        hideProgressBar: false,
-                                        closeOnClick: false,
-                                        pauseOnHover: false,
-                                        draggable: false,
-                                        progress: undefined,
-                                        theme: "light",
-                                    });
+                                    toast.warn(
+                                        "Vui lòng xác thực tài khoản trước khi thanh toán!",
+                                        {
+                                            position: "top-right",
+                                            autoClose: 3000,
+                                            hideProgressBar: false,
+                                            closeOnClick: false,
+                                            pauseOnHover: false,
+                                            draggable: false,
+                                            progress: undefined,
+                                            theme: "light",
+                                        }
+                                    );
                                 } else {
                                     checkout();
                                 }

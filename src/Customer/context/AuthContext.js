@@ -34,7 +34,9 @@ export const AuthContextProvider = ({ children }) => {
                             })
                             .catch((err) => {
                                 if (err.response.status === 400) {
-                                    alert("Tài khoản của bạn đã bị vô hiệu hóa");
+                                    alert(
+                                        "Tài khoản của bạn đã bị vô hiệu hóa! Vui lòng liên hệ admin!"
+                                    );
                                     setUser(null);
                                     localStorage.setItem("jwt", "null");
                                     localStorage.setItem("accountId", "null");
@@ -68,10 +70,7 @@ export const AuthContextProvider = ({ children }) => {
                         localStorage.setItem("accountId", "null");
                     } else {
                         localStorage.setItem("jwt", JSON.stringify(res?.data?.jwt));
-                        localStorage.setItem(
-                            "accountId",
-                            JSON.stringify(res?.data?.accountId)
-                        );
+                        localStorage.setItem("accountId", JSON.stringify(res?.data?.accountId));
                         // console.log(res);
                     }
                     console.log(currentUser.accessToken);

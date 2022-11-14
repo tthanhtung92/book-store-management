@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import bookApi from "../../api/bookApi";
 import BookDetail from "../../components/BookDetail/BookDetail";
 import Footer from "../../components/Footer/Footer";
@@ -22,7 +24,16 @@ function BookDetails() {
                 setBooks(res.data);
                 // console.log(res.data);
             } catch (error) {
-                console.log("Không lấy được dữ liệu từ API");
+                toast.error("Không fetch được dữ liệu!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
             setLoading(false);
         };
@@ -40,6 +51,18 @@ function BookDetails() {
             ))}
             {/* Footer */}
             <Footer />
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover={false}
+                theme="light"
+            />
         </div>
     );
 }
