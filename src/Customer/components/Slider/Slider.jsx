@@ -1,18 +1,18 @@
 import { Component } from "react";
-import { linkImg } from "./sliderData";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import "./Slider.css";
+import { linkImg } from "./sliderData";
 
 const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 8000,
     pauseOnHover: false,
     initialSlide: 0,
     arrows: false,
@@ -22,11 +22,11 @@ const settings = {
             settings: {
                 dots: false,
                 infinite: true,
-                speed: 500,
+                speed: 1000,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 autoplay: true,
-                autoplaySpeed: 4000,
+                autoplaySpeed: 10000,
                 pauseOnHover: false,
                 initialSlide: 0,
                 arrows: false,

@@ -77,7 +77,7 @@
 .best-seller__right-price p {
     font-weight: 500;
     font-size: 1.8rem;
-    color: var(--third-color);
+    color: var(--button-color);
     margin: 8px 0;
 }
 

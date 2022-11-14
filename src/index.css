@@ -11,18 +11,17 @@ body::-webkit-scrollbar {
 }
 
 :root {
-    --text-color: #333;
-    --white-color: #fff;
-    --black-color: #000;
-    --primary-color: #006e7f;
-    --secondary-color: #f8cb2e;
-    --third-color: #ee5007;
-    --button-color: #b22727;
-    --footer-color: #2b0f42;
+    --text-color: #333 !important;
+    --white-color: #fff !important;
+    --black-color: #000 !important;
+    --primary-color: #006e7f !important;
+    --secondary-color: #f8cb2e !important;
+    --button-color: #b22727 !important;
+    --footer-color: #2b0f42 !important;
 
-    --navbar-height: 118px;
-    --turnover-height: 40px;
-    --footer-height: 210px;
+    --navbar-height: 118px !important;
+    --turnover-height: 40px !important;
+    --footer-height: 210px !important;
 }
 
 * {
@@ -58,7 +57,7 @@ html {
 .btn-secondary {
     position: relative;
     display: inline-block;
-    width: 190px;
+    width: 192px;
     height: 38px;
     padding: 11px 10px 10px;
     background-color: var(--button-color);

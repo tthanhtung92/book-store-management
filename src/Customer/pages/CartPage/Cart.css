@@ -96,6 +96,7 @@
 }
 
 .cart-table__book-price {
+    color: var(--button-color);
     text-align: left;
     font-weight: 500;
 }

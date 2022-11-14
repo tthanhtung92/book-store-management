@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import bookApi from "../../api/bookApi";
 import fieldApi from "../../api/fieldApi";
 import BestSeller from "../../components/BestSeller/BestSeller";
@@ -16,7 +17,6 @@ function Home() {
     const [twoFields, setTwoFields] = useState([]);
     const [bestSellers, setBestSellers] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         // 👇️ scroll to top on page load
@@ -30,8 +30,16 @@ function Home() {
                 setFields(res.data);
                 // console.log(res.data);
             } catch (err) {
-                setError(err);
-                console.log("Không lấy được dữ liệu từ API");
+                toast("Không lấy được dữ liệu field!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
             setLoading(false);
         };
@@ -46,8 +54,16 @@ function Home() {
                 setTwoFields(res.data);
                 // console.log(res.data);
             } catch (err) {
-                setError(err);
-                console.log("Không lấy được dữ liệu 2 row từ API");
+                toast("Không lấy được dữ liệu 2 row!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
             setLoading(false);
         };
@@ -62,8 +78,16 @@ function Home() {
                 setBestSellers(res.data);
                 // console.log(res.data);
             } catch (err) {
-                setError(err);
-                console.log("Không lấy được dữ liệu best seller từ API");
+                toast("Không lấy được dữ liệu best seller!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
             setLoading(false);
         };
@@ -73,34 +97,42 @@ function Home() {
 
     return (
         <>
-            {error ? (
-                <Navigate to="/500" />
-            ) : (
-                <div id="main">
-                    {/* Navbar */}
-                    <Navbar />
+            <div id="main">
+                {/* Navbar */}
+                <Navbar />
 
-                    {/* Slider */}
-                    <Sliders />
+                {/* Slider */}
+                <Sliders />
 
-                    <Field data={fields} />
-                    
-                    <BestSeller data3={bestSellers} />
+                <Field data={fields} />
 
-                    {loading && <HomeSkeleton fields={5} />}
+                <BestSeller data3={bestSellers} />
 
-                    {/* Content */}
+                {loading && <HomeSkeleton fields={5} />}
 
-                    <div className="also-like">
-                        <h1 className="also-like-text">Có thể bạn cũng sẽ thích</h1>
-                    </div>
+                {/* Content */}
 
-                    <Bonus data2={twoFields} />
-
-                    {/* Footer */}
-                    <Footer />
+                <div className="also-like">
+                    <h1 className="also-like-text">Có thể bạn cũng sẽ thích</h1>
                 </div>
-            )}
+
+                <Bonus data2={twoFields} />
+
+                {/* Footer */}
+                <Footer />
+                <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable={false}
+                    pauseOnHover={false}
+                    theme="light"
+                />
+            </div>
         </>
     );
 }

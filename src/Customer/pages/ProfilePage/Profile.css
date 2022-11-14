@@ -66,5 +66,5 @@
 }
 
 .order-details__item-total-price-span {
-    color: var(--third-color);
+    color: var(--button-color);
 }

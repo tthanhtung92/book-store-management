@@ -9,10 +9,6 @@ import OrderDetail from "./Customer/pages/OrderDetailPage/OrderDetail";
 import Profile from "./Customer/pages/ProfilePage/Profile";
 import SignIn from "./Customer/pages/SignInPage/SignIn";
 
-//special
-import Error from "./Customer/pages/500/Error";
-import VerifyAccount from "./Customer/pages/VerifyAccountPage/VerifyAccount";
-
 //For cart
 import Cancel from "./Customer/pages/CancelPage/Cancel";
 import Success from "./Customer/pages/SuccessPage/Success";
@@ -38,10 +34,6 @@ export default function App() {
                     {/* For cart payment */}
                     <Route path="success" element={<Success />} />
                     <Route path="cancel" element={<Cancel />} />
-
-                    {/* Special */}
-                    <Route path="/500" element={<Error />} />
-                    <Route path="/verify" element={<VerifyAccount />} />
                 </Routes>
             </BrowserRouter>
         </AuthContextProvider>

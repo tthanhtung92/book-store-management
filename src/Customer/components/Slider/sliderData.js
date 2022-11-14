@@ -1,14 +1,14 @@
 export const linkImg = [
     {
         id: 1,
-        link: "https://salt.tikicdn.com/cache/w1080/ts/banner/ec/42/79/b3d84e55684e5210434fc818be1bf730.png.webp",
+        link: "https://firebasestorage.googleapis.com/v0/b/imagebookstore.appspot.com/o/Artboard%201.png?alt=media&token=a574bd85-854e-4586-830b-16a7e713e1ba",
     },
     {
         id: 2,
-        link: "https://salt.tikicdn.com/cache/w1080/ts/banner/34/33/16/83d3781404ce18e196751c8a275b0199.png.webp",
+        link: "https://firebasestorage.googleapis.com/v0/b/imagebookstore.appspot.com/o/Artboard%202.png?alt=media&token=6403461b-626d-4e38-ad73-eba2c1af6d2b",
     },
     {
         id: 3,
-        link: "https://salt.tikicdn.com/cache/w1080/ts/banner/41/81/87/d2fc690104e43519b1b9e928bb4ab11f.png.webp",
+        link: "https://firebasestorage.googleapis.com/v0/b/imagebookstore.appspot.com/o/Artboard%203.png?alt=media&token=621be955-3dc1-44c4-82d2-8cce3cc3264c",
     },
 ];

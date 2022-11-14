@@ -25,9 +25,11 @@
 }
 
 .content__header-name {
-    font-size: 3.4rem;
+    font-size: 3rem;
     font-weight: 500;
     margin-left: 12px;
+    margin-bottom: 18px;
+    color: var(--primary-color);
 }
 
 .content__header-viewAll-btn {
