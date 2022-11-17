@@ -31,7 +31,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 function Navbar() {
     //props
-    const { isEmpty, totalItems } = useCart();
+    const { isEmpty, totalItems, emptyCart } = useCart();
     // handle logout
     const navigate = useNavigate();
     const { logOut, user } = UserAuth();
@@ -173,7 +173,10 @@ function Navbar() {
                                     <Divider />
 
                                     <MenuItem
-                                        onClick={handleSignOut}
+                                        onClick={() => {
+                                            handleSignOut();
+                                            emptyCart();
+                                        }}
                                         className="navbar__right-menu-item"
                                         sx={{
                                             display: "flex",

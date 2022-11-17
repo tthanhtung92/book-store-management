@@ -1,6 +1,6 @@
 .formMain {
     /* background: #f6f5f7; */
-    background-image: linear-gradient(57deg, var(--primary-color), var(--secondary-color));
+    background-image: linear-gradient(57deg, var(--button-color), #fff6e0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,8 +52,8 @@
 
 .formMain button {
     border-radius: 20px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--primary-color);
+    border: var(--button-color);
+    background-color: var(--button-color);
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
@@ -65,7 +65,7 @@
 
 .formMain button:hover {
     cursor: pointer;
-    background-color: #40c176;
+    background-color: #b22727c5;
 }
 
 .formMain button:active {
@@ -176,7 +176,7 @@
 }
 
 .overlay {
-    background: linear-gradient(314deg, #66ce91, #cf6883);
+    background: linear-gradient(314deg, var(--button-color), #fff6e0);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -277,10 +277,11 @@
 
 button.ghost {
     cursor: pointer;
+    border: 1px solid #fff;
 }
 
 button.ghost:hover {
-    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.075);
 }
 
 .btn-SignUp {

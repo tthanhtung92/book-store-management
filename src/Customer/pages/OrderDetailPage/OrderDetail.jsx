@@ -9,7 +9,8 @@ import "./OrderDetail.css";
 
 const OrderDetail = () => {
     const { orderId } = useParams();
-    const [orders, setOrders] = useState([]);
+    const [orderDetails, setOrderDetails] = useState([]);
+    const [order, setOrder] = useState([]);
 
     const formatCash = (n) => {
         return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -24,8 +25,9 @@ const OrderDetail = () => {
         const Data = async () => {
             try {
                 const res = await orderApi.getOrderDetailByOrderId(orderId);
-                setOrders(res.data[0].orderDetails);
-                // console.log(res.data);
+                setOrderDetails(res.data[0].orderDetails);
+                setOrder(res.data[0]);
+                console.log(res.data[0].orderStatus);
                 // console.log(res.data[0].orderDetails);
             } catch (err) {
                 toast.error("Không fetch được dữ liệu!", {
@@ -48,11 +50,18 @@ const OrderDetail = () => {
         <>
             <Navbar />
             <div className="order-detail-container">
-                <div className="order-detail__title">
-                    <h1>Đơn hàng của bạn sẽ được giao đến sau vài ngày!</h1>
-                </div>
+                {order.orderStatus === true ? (
+                    <div className="order-detail__title">
+                        <h1>Đơn hàng của bạn sẽ được giao đến sau vài ngày!</h1>
+                    </div>
+                ) : (
+                    <div className="order-detail__title-cancel">
+                        <h1>Đơn hàng này đã được hủy!</h1>
+                    </div>
+                )}
+
                 <div className="order-detail-wrap">
-                    {orders.map((item, index) => (
+                    {orderDetails.map((item, index) => (
                         <div className="order-detail-wrap__item" key={index}>
                             <div className="order-detail-wrap__item-details">
                                 <img

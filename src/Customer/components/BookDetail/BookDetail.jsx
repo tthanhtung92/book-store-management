@@ -1,5 +1,6 @@
+import parse from "html-react-parser";
 import { React } from "react";
-import { AiFillCheckCircle } from "react-icons/ai";
+import { AiFillCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,12 +9,14 @@ import "./BookDetail.css";
 
 function BookDetail(props) {
     //Lấy dữ liệu từ api getbookbyId
-    let { bookID, image, bookName, price, description, dateOfPublished } = props.data;
+    console.log(props.data);
+    let { bookID, image, bookName, quantity, price, description, dateOfPublished } = props.data;
     let { authorName } = props.data.author;
     let { publisherName } = props.data.publisher;
 
     //add key "id" = "bookId"
     props.data.id = props.data.bookID;
+    props.data.storeQuantity = props.data.quantity;
 
     //cart logic
     const { addItem } = useCart();
@@ -70,10 +73,19 @@ function BookDetail(props) {
                         </h1>
 
                         {/* status */}
-                        <div className="bookDetail__detail-status">
-                            <AiFillCheckCircle className="bookDetail__detail-statusIcon" />
-                            AVAILABLE
-                        </div>
+                        {quantity > 0 ? (
+                            <div className="bookDetail__detail-status">
+                                <AiFillCheckCircle className="bookDetail__detail-statusIcon" />
+                                AVAILABLE
+                            </div>
+                        ) : (
+                            <>
+                                <div className="bookDetail__detail-status-un">
+                                    <AiOutlineCloseCircle className="bookDetail__detail-statusIcon-un" />
+                                    UNAVAILABLE
+                                </div>
+                            </>
+                        )}
 
                         {/* action button */}
                         <button
@@ -89,7 +101,7 @@ function BookDetail(props) {
                         {/* description */}
                         <div className="bookDetail__detail-description">
                             <h1>Mô tả</h1>
-                            <p style={{ whiteSpace: "break-spaces" }}>{description}</p>
+                            <p style={{ whiteSpace: "break-spaces" }}>{parse(description)}</p>
                         </div>
 
                         {/* Detail */}

@@ -43,6 +43,10 @@
 }
 
 /* Detail */
+.bookDetail__detail {
+    width: 614px;
+}
+
 .bookDetail__detail-title h1 {
     font-size: 3.4rem;
     font-weight: 500;
@@ -89,6 +93,22 @@
 .bookDetail__detail-statusIcon {
     font-size: 2rem;
     color: #20a5a3;
+    margin-right: 4px;
+}
+
+/* unavailable */
+.bookDetail__detail-status-un {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--button-color);
+    font-weight: 500;
+}
+
+.bookDetail__detail-statusIcon-un {
+    font-size: 2rem;
+    color: var(--button-color);
+    margin-right: 4px;
 }
 
 .mt-20 {

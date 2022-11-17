@@ -15,6 +15,11 @@ const orderApi = {
         const url = `Order/GetByOrderId/${data}`;
         return axiosClient.get(url);
     },
+
+    updateStatus(data, body) {
+        const url = `Order/UpdateStatus/${data}`;
+        return axiosClient.put(url, body);
+    },
 };
 
 export default orderApi;

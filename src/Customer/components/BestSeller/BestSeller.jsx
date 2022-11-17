@@ -1,3 +1,4 @@
+import parse from "html-react-parser";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./BestSeller.css";
@@ -45,7 +46,7 @@ const BestSeller = (props) => {
                             <p>{formatCash(item?.price) + " VNĐ"}</p>
                         </div>
                         <div className="best-seller__right-desc">
-                            <p>{item?.description}</p>
+                            <p>{parse(item?.description)}</p>
                         </div>
                     </div>
                 </div>

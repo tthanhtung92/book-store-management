@@ -64,17 +64,27 @@ export const AuthContextProvider = ({ children }) => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             try {
-                authApi.verifyAccessToken(currentUser.accessToken).then((res) => {
-                    if (res?.data?.isNewUser === true) {
-                        localStorage.setItem("jwt", "null");
-                        localStorage.setItem("accountId", "null");
-                    } else {
-                        localStorage.setItem("jwt", JSON.stringify(res?.data?.jwt));
-                        localStorage.setItem("accountId", JSON.stringify(res?.data?.accountId));
-                        // console.log(res);
-                    }
-                    console.log(currentUser.accessToken);
-                });
+                authApi
+                    .verifyAccessToken(currentUser.accessToken)
+                    .then((res) => {
+                        if (res?.data?.isNewUser === true) {
+                            localStorage.setItem("jwt", "null");
+                            localStorage.setItem("accountId", "null");
+                        } else {
+                            localStorage.setItem("jwt", JSON.stringify(res?.data?.jwt));
+                            localStorage.setItem("accountId", JSON.stringify(res?.data?.accountId));
+                            console.log(res);
+                        }
+                        // console.log(currentUser.accessToken);
+                    })
+                    .catch((err) => {
+                        if (err.response.status === 400) {
+                            alert("Tài khoản của bạn đã bị vô hiệu hóa! Vui lòng liên hệ admin!");
+                            setUser(null);
+                            localStorage.setItem("jwt", "null");
+                            localStorage.setItem("accountId", "null");
+                        }
+                    });
             } catch (error) {
                 console.log("Bạn chưa nhập hoặc chưa xác thực tài khoản!");
             }

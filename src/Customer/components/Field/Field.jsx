@@ -48,56 +48,76 @@ function Field(props) {
 
                     <div className="content__body">
                         <div className="row">
-                            <div className="column">
-                                <Link to={`/bookDetail/${item?.books[0]?.bookID}`}>
-                                    <img
-                                        src={item?.books[0]?.image}
-                                        alt=""
-                                        className="book"
-                                        loading="lazy"
-                                    />
-                                </Link>
-                            </div>
-                            <div className="column">
-                                <Link to={`/bookDetail/${item?.books[1]?.bookID}`}>
-                                    <img
-                                        src={item?.books[1]?.image}
-                                        alt=""
-                                        className="book"
-                                        loading="lazy"
-                                    />
-                                </Link>
-                            </div>
-                            <div className="column">
-                                <Link to={`/bookDetail/${item?.books[2]?.bookID}`}>
-                                    <img
-                                        src={item?.books[2]?.image}
-                                        alt=""
-                                        className="book"
-                                        loading="lazy"
-                                    />
-                                </Link>
-                            </div>
-                            <div className="column">
-                                <Link to={`/bookDetail/${item?.books[3]?.bookID}`}>
-                                    <img
-                                        src={item?.books[3]?.image}
-                                        alt=""
-                                        className="book"
-                                        loading="lazy"
-                                    />
-                                </Link>
-                            </div>
-                            <div className="column">
-                                <Link to={`/bookDetail/${item?.books[4]?.bookID}`}>
-                                    <img
-                                        src={item?.books[4]?.image}
-                                        alt=""
-                                        className="book"
-                                        loading="lazy"
-                                    />
-                                </Link>
-                            </div>
+                            {item?.books[0]?.image === undefined ? (
+                                <></>
+                            ) : (
+                                <div className="column">
+                                    <Link to={`/bookDetail/${item?.books[0]?.bookID}`}>
+                                        <img
+                                            src={item?.books[0]?.image}
+                                            alt=""
+                                            className="book"
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </div>
+                            )}
+                            {item?.books[1]?.image === undefined ? (
+                                <></>
+                            ) : (
+                                <div className="column">
+                                    <Link to={`/bookDetail/${item?.books[1]?.bookID}`}>
+                                        <img
+                                            src={item?.books[1]?.image}
+                                            alt=""
+                                            className="book"
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </div>
+                            )}
+                            {item?.books[2]?.image === undefined ? (
+                                <></>
+                            ) : (
+                                <div className="column">
+                                    <Link to={`/bookDetail/${item?.books[2]?.bookID}`}>
+                                        <img
+                                            src={item?.books[2]?.image}
+                                            alt=""
+                                            className="book"
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </div>
+                            )}
+                            {item?.books[3]?.image === undefined ? (
+                                <></>
+                            ) : (
+                                <div className="column">
+                                    <Link to={`/bookDetail/${item?.books[3]?.bookID}`}>
+                                        <img
+                                            src={item?.books[3]?.image}
+                                            alt=""
+                                            className="book"
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </div>
+                            )}
+                            {item?.books[4]?.image === undefined ? (
+                                <></>
+                            ) : (
+                                <div className="column">
+                                    <Link to={`/bookDetail/${item?.books[4]?.bookID}`}>
+                                        <img
+                                            src={item?.books[4]?.image}
+                                            alt=""
+                                            className="book"
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

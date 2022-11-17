@@ -37,7 +37,7 @@ const FieldDetail = () => {
                 const res = await fieldApi.getById(fieldId);
                 setBooks(res.data[0].books);
                 setField(res.data);
-                // console.log(res.data[0].books);
+                // console.log("tesst", res.data[0].books);
             } catch (error) {
                 toast.error("Không fetch được dữ liệu!", {
                     position: "top-right",
@@ -56,7 +56,7 @@ const FieldDetail = () => {
     }, [fieldId]);
     //-----------------------------
 
-    console.log(books);
+    // console.log(books);
 
     return (
         <div className="main">

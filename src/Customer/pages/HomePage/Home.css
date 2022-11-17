@@ -6,13 +6,13 @@
 
 .also-like {
     margin-top: 130px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .also-like-text {
     text-align: center;
     color: var(--primary-color);
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 3.4rem;
+    font-weight: 600;
     margin: 0;
 }

@@ -18,6 +18,14 @@
     margin: 0;
 }
 
+.order-detail__title-cancel {
+    color: var(--button-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: inline-block;
+    margin: 0;
+}
+
 .order-detail-wrap {
     max-width: 1080px;
     display: flex;

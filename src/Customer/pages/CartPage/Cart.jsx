@@ -115,30 +115,53 @@ const Cart = () => {
                                             </td>
                                             <td>
                                                 <div className="action">
-                                                    <button
-                                                        onClick={() =>
-                                                            updateItemQuantity(
-                                                                item.id,
-                                                                item.quantity - 1
-                                                            )
-                                                        }
-                                                        className="sub-btn"
-                                                    >
-                                                        <RiSubtractFill
-                                                            style={{ color: "white" }}
-                                                        />
-                                                    </button>
-                                                    <button
-                                                        onClick={() =>
-                                                            updateItemQuantity(
-                                                                item.id,
-                                                                item.quantity + 1
-                                                            )
-                                                        }
-                                                        className="add-btn"
-                                                    >
-                                                        <RiAddCircleLine />
-                                                    </button>
+                                                    {item.quantity === 1 ? (
+                                                        <button
+                                                            className="sub-btn-disable"
+                                                            disabled={true}
+                                                        >
+                                                            <RiSubtractFill
+                                                                style={{ color: "white" }}
+                                                            />
+                                                        </button>
+                                                    ) : (
+                                                        <button
+                                                            onClick={() =>
+                                                                updateItemQuantity(
+                                                                    item.id,
+                                                                    item.quantity - 1
+                                                                )
+                                                            }
+                                                            className="sub-btn"
+                                                        >
+                                                            <RiSubtractFill
+                                                                style={{ color: "white" }}
+                                                            />
+                                                        </button>
+                                                    )}
+
+                                                    {item.quantity === item.storeQuantity ? (
+                                                        <button
+                                                            className="add-btn-disable"
+                                                            disabled={true}
+                                                        >
+                                                            <RiAddCircleLine />
+                                                        </button>
+                                                    ) : (
+                                                        <button
+                                                            onClick={() =>
+                                                                updateItemQuantity(
+                                                                    item.id,
+                                                                    item.quantity + 1
+                                                                )
+                                                            }
+                                                            className="add-btn"
+                                                            disabled={false}
+                                                        >
+                                                            <RiAddCircleLine />
+                                                        </button>
+                                                    )}
+
                                                     <button
                                                         variant="danger"
                                                         onClick={() => removeItem(item.id)}

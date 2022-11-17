@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
-import { useCart } from "react-use-cart";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCart } from "react-use-cart";
 import "./Book.css";
 
 function Book(props) {
-    let { bookID, image, bookName, price } = props.data;
+    // eslint-disable-next-line
+    let { bookID, image, quantity, bookName, price } = props.data;
     let { authorName } = props.data.author;
 
     //add key "id" = "bookId"
     props.data.id = props.data.bookID;
+    props.data.storeQuantity = props.data.quantity;
 
     //cart logic
     const { addItem } = useCart();
